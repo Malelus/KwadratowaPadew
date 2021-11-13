@@ -183,20 +183,20 @@ clock.addEventListener('mouseover', () => {
   clock.title = `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
 });
 
-//===// Change logo //===//
+//===// Change hero images //===//
 
 window.onload = () => {
   const date = new Date();
-  const today = `${date.getDate()}.${date.getMonth() + 1}`;
+  let today = `${date.getDate()}.${date.getMonth() + 1}`;
 
-  if (today === ('24.21' || '25.12' || '26.12')) {
-    logo.src = '../img/logo_hat.png';
-    backpack.src = '../img/props/backpack/red.png';
+  if (today === '24.12' || today === '25.12' || today === '26.12') {
+    logo.src = './img/logo_hat.png';
+    backpack.src = './img/props/backpack/red.png';
   }
 
-  if (today === ('31.12' || '1.1')) {
-    logo.src = '../img/logo_firework.png';
-    backpack.src = '../img/props/backpack/rainbow.png';
+  if (today === '31.12' || today === '1.1') {
+    logo.src = './img/logo_firework.png';
+    backpack.src = './img/props/backpack/rainbow.png';
   }
 };
 
@@ -207,7 +207,7 @@ const imgInsert = (array, box, desc) => {
     const div = document.createElement('div');
     const img = document.createElement('img');
 
-    img.src = `../img/craftings/${item}`;
+    img.src = `./img/craftings/${item}`;
     img.title = item.charAt(0).toUpperCase() + item.substr(1, item.length - 5).replaceAll('_', ' ');
     div.append(img);
 
