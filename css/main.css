@@ -36,6 +36,15 @@ body {
     transition-delay: 0s !important;
   }
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.06em;
+}
+
 a {
   text-decoration: none;
 }
@@ -368,9 +377,6 @@ body {
 .hero__buy--btn:hover {
   background: rgba(241, 73, 2, 0.8);
 }
-.hero__buy--btn:hover {
-  font-size: 3.15rem;
-}
 .hero__buy--text {
   color: #f14902;
   font-size: 0.75rem;
@@ -472,7 +478,17 @@ body {
   font-size: 2.25rem;
   margin: 1.25em 0 0;
 }
-.server__box-desc {
+.server__container {
+  border: 5px solid #f6e7d8;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+}
+.server__container__box {
+  display: grid;
+  place-items: center;
+  padding: 1em 0;
+}
+.server__element-desc {
   text-align: center;
   font-size: 0.8;
   background: #f6e7d8;
@@ -480,16 +496,6 @@ body {
   border-radius: 0.25em;
   margin: 0.5em 0;
   padding: 0.25em 1em 0em;
-}
-.server article {
-  border: 5px solid #f6e7d8;
-  border-radius: 10px;
-  padding: 0.5em 1em;
-}
-.server article div {
-  display: grid;
-  place-items: center;
-  padding: 1em 0;
 }
 
 .design-server {
@@ -550,6 +556,6 @@ body {
 .contact {
   background: #1c191a;
   color: #f6e7d8;
-  border-top: 5px solid #f14902;
+  border-top: 0.5em solid #f14902;
   padding: 2em 0;
 }/*# sourceMappingURL=main.css.map */

@@ -29,7 +29,7 @@ const backpack = document.querySelector('.prop__backpack');
 
 // - images array
 const newItems = ['backpack.gif', 'wrench.png'];
-const newItemsDesc = ['Plecak podróżnika, w sam raz na długą wyprawę.', 'Budowanie mechanizmów będzie prostsze dzięki kluczowi do obracania.'];
+const newItemsDesc = ['Plecak podróżnika, w sam raz na długą wyprawę.', 'Budowanie mechanizmów będzie prostsze, dzięki kluczowi do obracania.'];
 
 const craftings = [
   'torch.gif',
@@ -47,7 +47,7 @@ const craftings = [
   'slimeball.png',
 ];
 
-const structures = [];
+const structures = ['logo.png'];
 
 //=================================//
 //===// Loading DOM variables //===//
@@ -202,19 +202,20 @@ window.onload = () => {
 
 //===// Images insert //===//
 
-const imgInsert = (array, box, desc) => {
+const imgInsert = (array, folder, box, desc) => {
   array.forEach((item, index) => {
     const div = document.createElement('div');
-    const img = document.createElement('img');
+    div.classList.add('server__container__box');
 
-    img.src = `./img/craftings/${item}`;
+    const img = document.createElement('img');
+    img.src = `./img/content/${folder}/${item}`;
     img.title = item.charAt(0).toUpperCase() + item.substr(1, item.length - 5).replaceAll('_', ' ');
     div.append(img);
 
     if (desc) {
       const text = document.createElement('p');
       text.innerText = desc[index];
-      text.classList.add('server__box-desc');
+      text.classList.add('server__element-desc');
       div.append(text);
     }
 
@@ -223,10 +224,10 @@ const imgInsert = (array, box, desc) => {
 };
 
 // New items
-imgInsert(newItems, '.server__items-box', newItemsDesc);
+imgInsert(newItems, 'newItems', '.server__container--items', newItemsDesc);
 
 // Changed craftings
-imgInsert(craftings, '.server__craftings-box');
+imgInsert(craftings, 'craftings', '.server__container--craftings');
 
 // New structures
-imgInsert(structures, '.server__structures-box');
+imgInsert(structures, 'structures', '.server__container--structures');

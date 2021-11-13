@@ -181,10 +181,6 @@ body {
       font-size: 3rem;
 
       @include hover-bg(color(accent));
-
-      &:hover {
-        font-size: 3.15rem;
-      }
     }
 
     &--text {
@@ -308,25 +304,27 @@ body {
     margin: 1.25em 0 0;
   }
 
-  &__box-desc {
-    text-align: center;
-    font-size: 0.8;
-    background: color(bg-light);
-    border-bottom: 0.25em solid color(accent);
-    border-radius: 0.25em;
-    margin: 0.5em 0;
-    padding: 0.25em 1em 0em;
-  }
-
-  & article {
+  &__container {
     border: 5px solid color(bg-light);
     border-radius: 10px;
     padding: 0.5em 1em;
 
-    & div {
+    &__box {
       display: grid;
       place-items: center;
       padding: 1em 0;
+    }
+  }
+
+  &__element {
+    &-desc {
+      text-align: center;
+      font-size: 0.8;
+      background: color(bg-light);
+      border-bottom: 0.25em solid color(accent);
+      border-radius: 0.25em;
+      margin: 0.5em 0;
+      padding: 0.25em 1em 0em;
     }
   }
 }
@@ -381,6 +379,6 @@ body {
 .contact {
   @include dark-theme;
 
-  border-top: 5px solid color(accent);
+  border-top: 0.5em solid color(accent);
   padding: 2em 0;
 }

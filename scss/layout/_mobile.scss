@@ -9,4 +9,16 @@
 //======================================//
 
 @include mobile {
+  // .server {
+  //   & article {
+  //     display: grid;
+  //     place-items: center;
+  //     justify-content: space-between;
+  //     grid-template-columns: 1fr 1fr;
+  //   }
+
+  //   .server__box-desc {
+  //     margin-right: auto;
+  //   }
+  // }
 }
