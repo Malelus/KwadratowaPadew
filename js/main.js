@@ -23,6 +23,31 @@ const scrollTo = document.querySelectorAll('#scrollTo');
 // - clock
 const clock = document.querySelector('.prop__clock');
 
+// - img change on christmas
+const logo = document.querySelector('.hero__img');
+const backpack = document.querySelector('.prop__backpack');
+
+// - images array
+const newItems = ['backpack.gif', 'wrench.png'];
+
+const craftings = [
+  'torch.gif',
+  'chain.png',
+  'chain_recycle.gif',
+  'beacon.png',
+  'crying_obsidian.png',
+  'enchanting_table.png',
+  'eye_of_ender.png',
+  'ender_chest.png',
+  'shield.gif',
+  'rotten_flesh_drying.gif',
+  'dispenser.gif',
+  'horse_armor.gif',
+  'slimeball.png',
+];
+
+const structures = [];
+
 //=================================//
 //===// Loading DOM variables //===//
 //=================================//
@@ -156,3 +181,42 @@ clock.addEventListener('mouseover', () => {
 
   clock.title = `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
 });
+
+//===// Change logo //===//
+
+window.onload = () => {
+  const date = new Date();
+  const today = `${date.getDate()}.${date.getMonth() + 1}`;
+
+  if (today === ('24.21' || '25.12' || '26.12')) {
+    logo.src = '/img/logo_hat.png';
+    backpack.src = '/img/props/backpack/red.png';
+  }
+
+  if (today === ('31.12' || '1.1')) {
+    logo.src = '/img/logo_firework.png';
+    backpack.src = '/img/props/backpack/rainbow.png';
+  }
+};
+
+//===// Images insert //===//
+
+const imgInsert = (array, box) => {
+  array.forEach((item) => {
+    const img = document.createElement('img');
+
+    img.src = `/img/craftings/${item}`;
+    img.title = item.charAt(0).toUpperCase() + item.substr(1, item.length - 5).replaceAll('_', ' ');
+
+    document.querySelector(box).appendChild(img);
+  });
+};
+
+// New items
+imgInsert(newItems, '.server__items-box');
+
+// Changed craftings
+imgInsert(craftings, '.server__craftings-box');
+
+// New structures
+imgInsert(structures, '.server__structures-box');

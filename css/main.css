@@ -452,6 +452,32 @@ body {
   background: #f4b324;
   color: #1c191a;
 }
+.server__description {
+  text-align: center;
+  line-height: 1.25em;
+  margin: 1.5em 0 2em;
+}
+.server__description--main {
+  color: #f6e7d8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.server__description--block {
+  display: block;
+}
+.server__title {
+  text-align: center;
+  -webkit-text-stroke: 0px #f14902;
+  font-family: "BPimperial", serif;
+  font-size: 2.25rem;
+  margin: 1.25em 0 0;
+}
+.server article {
+  border: 5px solid #f6e7d8;
+  border-radius: 10px;
+  padding: 0.1em;
+  margin: 1em auto;
+}
 
 .design-server {
   -webkit-clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);

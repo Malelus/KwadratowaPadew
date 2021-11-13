@@ -283,6 +283,37 @@ body {
 
 .server {
   @include main-theme;
+
+  &__description {
+    text-align: center;
+    line-height: 1.25em;
+    margin: 1.5em 0 2em;
+
+    &--main {
+      color: color(txt-light);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    &--block {
+      display: block;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    -webkit-text-stroke: 0px color(accent);
+    font-family: font(accent);
+    font-size: 2.25rem;
+    margin: 1.25em 0 0;
+  }
+
+  & article {
+    border: 5px solid color(bg-light);
+    border-radius: 10px;
+    padding: 0.1em;
+    margin: 1em auto;
+  }
 }
 
 .design-server {
