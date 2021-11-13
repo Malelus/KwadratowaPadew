@@ -1,0 +1,52 @@
+//=========================================================//
+//===// Incorporating required buttons scss variables //===//
+//=========================================================//
+
+@use '../abstracts' as *;
+
+//===================//
+//===// Buttons //===//
+//===================//
+
+.btn {
+  position: relative;
+  background: color(bg-dark);
+  border: none;
+  outline: none;
+  color: color(bg-light);
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity duration(btn-anim-time) ease;
+
+  &--icon {
+    display: block;
+    pointer-events: none;
+    font-family: 'Font Awesome 5 Free';
+    box-shadow: none;
+    padding: 0.025em;
+
+    &--rounded {
+      border-radius: 50%;
+    }
+  }
+
+  //===// scrollUp //===//
+
+  &--scrollUp {
+    position: fixed;
+    z-index: 8;
+    border-radius: 50%;
+    font-size: 2rem;
+    box-shadow: none;
+    padding: 0.1em;
+    transition: all duration(btn-anim-time) ease;
+  }
+
+  //===// Header //===//
+
+  &--header {
+    width: 100%;
+    padding: 0.75em 0;
+    transition: all duration(btn-anim-time) ease;
+  }
+}

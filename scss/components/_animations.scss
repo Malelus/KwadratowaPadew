@@ -1,0 +1,39 @@
+//=============================================================//
+//===// Incorporating required transitions scss variables //===//
+//=============================================================//
+
+@use '../abstracts' as *;
+
+//======================//
+//===// Animations //===//
+//======================//
+
+//===// Nav //===//
+
+@keyframes nav-hide {
+  0% {
+    transform: translateX(15%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes nav-show {
+  0% {
+    transform: translateX(100%);
+  }
+
+  70% {
+    transform: translateX(15%);
+  }
+
+  85% {
+    transform: translateX(15.5%);
+  }
+
+  100% {
+    transform: translateX(15%);
+  }
+}

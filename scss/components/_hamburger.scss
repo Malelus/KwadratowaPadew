@@ -1,0 +1,75 @@
+//===========================================================//
+//===// Incorporating required hamburger scss variables //===//
+//===========================================================//
+
+@use '../abstracts' as *;
+
+//=====================//
+//===// Hamburger //===//
+//=====================//
+
+.hamburger {
+  display: block;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.15s ease-in-out, opacity duration(btn-anim-time) ease;
+  margin-right: calc(0.85em / 8);
+
+  @include hover-op;
+
+  &__box {
+    display: inline-block;
+    position: relative;
+    height: 18px;
+    width: 30px;
+  }
+
+  &__inner {
+    @include hamburger-line;
+
+    top: 50%;
+    left: 0;
+    transition: background-color 0.05s 0.05s ease-in-out;
+    transform: translateY(-50%);
+
+    &::before,
+    &::after {
+      @include hamburger-line;
+
+      content: '';
+      left: 0;
+      transition: transform 0.15s 0.05s ease-in-out;
+    }
+
+    &::before {
+      top: -10px;
+    }
+
+    &::after {
+      top: 10px;
+    }
+  }
+
+  &--visibility {
+    padding: 0.85em;
+    margin-right: 0;
+    border-radius: 0.5em;
+    background: color(bg-dark);
+  }
+
+  &--active &__inner {
+    background: transparent;
+  }
+
+  &--active &__inner::before {
+    transform: translateY(10px) rotate(45deg);
+    background: color(bg-dark);
+  }
+
+  &--active &__inner::after {
+    transform: translateY(-10px) rotate(-45deg);
+    background: color(bg-dark);
+  }
+}

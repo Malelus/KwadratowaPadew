@@ -1,0 +1,73 @@
+//========================================================//
+//===// Incorporating required mixins scss variables //===//
+//========================================================//
+
+@use './functions' as *;
+
+//==================//
+//===// Mixins //===//
+//==================//
+
+//===// Mobile layout //===//
+
+@mixin mobile {
+  @media screen and (min-width: brake(mobile)) {
+    @content;
+  }
+}
+
+//===// Desktop layout //===//
+
+@mixin desktop {
+  @media screen and (min-width: brake(desktop)) {
+    @content;
+  }
+}
+
+//===// Main theme //===//
+
+@mixin main-theme {
+  background: color(bg-main);
+  color: color(txt-dark);
+}
+
+//===// Light theme //===//
+
+@mixin light-theme {
+  background: color(bg-light);
+  color: color(txt-dark);
+
+  &__title {
+    text-align: right;
+  }
+}
+
+//===// Dark theme //===//
+
+@mixin dark-theme {
+  background: color(bg-dark);
+  color: color(txt-light);
+}
+
+//===// Hamburger line //===//
+
+@mixin hamburger-line {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: color(bg-light);
+}
+
+//===// Mouse hover //===//
+
+@mixin hover-op {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin hover-bg($color: color(txt-dark)) {
+  &:hover {
+    background: rgba($color, 0.8);
+  }
+}

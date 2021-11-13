@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kwadratowa Padew - Serwer Minecraft" />
+    <meta name="keywords" content="Minecraft, Survival, Minecraft Survival, Minecraft 1.18, Padew, Kwadratowa" />
+    <meta name="subject" content="Serwer Minecraft" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Mateusz Narowski, Adam Szala" />
+    <meta name="rating" content="Safe for kids" />
+
+    <meta property="og:title" content="Kwadratowa Padew" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kpadew.com" />
+    <meta property="og:image" content="(image url)" />
+    <meta property="og:site_name" content="Kwadratowa Padew" />
+    <meta property="og:description" content="Kwadratowa Padew - Serwer Minecraft" />
+    <meta property="og:locale" content="pl_PL" />
+
+    <meta name="fb:page_id" content="100985305132054" />
+    <meta name="twitter:image:alt" content="Kwadratowa Padew - Serwer Minecraft" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" href="./img/logo.png" />
+
+    <script src="./js/main.js" defer></script>
+
+    <title>Kwadratowa Padew</title>
+  </head>
+  <body>
+    <div class="transition transition--active slide-r-l"></div>
+
+    <button class="btn btn--scrollUp scrollUp" id="scrollUp">
+      <i class="fas fa-arrow-circle-up btn btn--icon btn--icon--rounded"></i>
+    </button>
+
+    <header class="header" id="header">
+      <section class="hero">
+        <div class="hero__title-box">
+          <h1 class="hero__title hero__title--main">Kwadratowa Padew</h1>
+          <h1 class="hero__title hero__title--secondary">VI Edycja</h1>
+
+          <img class="prop prop__chain" src="./img/props/chain.png" />
+          <img class="prop prop__clock" src="./img/props/clock.png" />
+
+          <img class="prop prop__gold" src="./img/props/gold_ingot.png" />
+        </div>
+
+        <div class="nav-toggle">
+          <button class="hamburger">
+            <span class="hamburger__box"><span class="hamburger__inner"></span></span>
+          </button>
+        </div>
+        <div class="nav-close"></div>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="server" class="nav__link" id="scrollTo" title="Serwer">Serwer</a>
+            </li>
+            <li class="nav__item">
+              <a href="dynmap" class="nav__link" id="scrollTo" title="Mapa naszego serwera">Dynmapa</a>
+            </li>
+            <li class="nav__item">
+              <a href="play_with_us" class="nav__link" id="scrollTo" title="Zagraj z Nami!">Zagraj z Nami!</a>
+            </li>
+            <li class="nav__item">
+              <a href="tutorials" class="nav__link" id="scrollTo" title="Poradniki">Poradniki</a>
+            </li>
+            <li class="nav__item">
+              <a href="files" class="nav__link" id="scrollTo" title="Pliki">Pliki</a>
+            </li>
+            <li class="nav__item">
+              <a href="contact" class="nav__link" id="scrollTo" title="Kontakt">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="hero__content">
+          <img src="./img/logo.png" alt="Logo" class="hero__img" />
+
+          <div class="hero__quote">
+            <img class="prop prop__backpack" src="./img/props/backpack.png" />
+            <span class="hero__quote__text">
+              <span>Nic tak nie cieszy</span>
+              <span>jak nowa edycja</span>
+              <span class="hero__quote__text--link copy">KPADEW.COM</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="hero__buy-box">
+          <p class="hero__buy hero__buy--text">Zakup dostęp, aby dołączyć do elitarnego serwera KPADEW!</p>
+          <button href="play_with_us" class="hero__buy hero__buy--btn btn btn--header" id="scrollTo" title="Kup dostęp">Kup dostęp</button>
+        </div>
+      </section>
+    </header>
+
+    <main class="main">
+      <div class="design-server">
+        <section class="server" id="server">
+          <div class="container">
+            <h2 class="section__title">Serwer</h2>
+            <div class="section__content"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="design-dynmap">
+        <section class="dynmap" id="dynmap">
+          <div class="container">
+            <h2 class="section__title">Dynmapa</h2>
+            <div class="section__content"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="design-play_with_us">
+        <section class="play_with_us" id="play_with_us">
+          <div class="container">
+            <h2 class="section__title">Zagraj z Nami!</h2>
+            <div class="section__content"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="design-tutorials">
+        <section class="tutorials" id="tutorials">
+          <div class="container">
+            <h2 class="section__title">Poradniki</h2>
+            <div class="section__content"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="design-files">
+        <section class="files" id="files">
+          <div class="container">
+            <h2 class="section__title">Pliki</h2>
+            <div class="section__content"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer" id="footer">
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2 class="section__title">Kontakt</h2>
+          <div class="section__content"></div>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

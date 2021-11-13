@@ -1,0 +1,44 @@
+//==============================================//
+//===// Incorporating dependent scss files //===//
+//==============================================//
+
+@use './brakepoints' as *;
+@use './fonts' as *;
+@use './colors' as *;
+@use './durations' as *;
+
+//=============================//
+//===// Map get functions //===//
+//=============================//
+
+//===// Responsive layouts //===//
+
+@function brake($brakepoint) {
+  @return map-get($brake, $brakepoint);
+}
+
+//===// Fonts //===//
+
+@function font($font-name) {
+  @return map-get($font, $font-name);
+}
+
+//===// Colors //===//
+
+@function color($color-name) {
+  @return map-get($color, $color-name);
+}
+
+//===// Timings //===//
+
+@function duration($duration-name) {
+  @return map-get($duration, $duration-name);
+}
+
+//====================================//
+//===// Exporting timings for js //===//
+//====================================//
+
+:root {
+  --transition-static: #{duration(transition-static)};
+}

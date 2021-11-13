@@ -1,0 +1,340 @@
+//================================================================//
+//===// Incorporating required default layout scss variables //===//
+//================================================================//
+
+@use '../abstracts' as *;
+
+//====================//
+//===// Reusable //===//
+//====================//
+
+//===// Container //===//
+
+.container {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+//===// Section //===//
+
+section {
+  position: relative;
+}
+
+//===// Scroll up //===//
+
+.scrollUp {
+  right: 20px;
+  bottom: 60px;
+  opacity: 0;
+  visibility: hidden;
+
+  &.scrollUp--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include hover-op;
+}
+
+//===// Props //===//
+
+.prop {
+  position: absolute;
+  height: 100%;
+
+  &__chain {
+    top: 67.7px;
+  }
+
+  &__clock {
+    top: 132.5px;
+    transform: rotate(-25deg) translateX(5px);
+  }
+
+  &__backpack {
+    position: relative;
+    height: 5rem;
+  }
+
+  // &__wrench {}
+
+  &__gold {
+    top: 160px;
+    right: 30px;
+    transform: rotate(45deg) translateX(5px);
+  }
+}
+
+//================//
+//===// Root //===//
+//================//
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background: color(bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: color(bg-main);
+  border: 0.15em solid color(bg-dark);
+  border-radius: 100vw;
+}
+
+//================//
+//===// Body //===//
+//================//
+
+body {
+  background: color(bg-light);
+  color: color(txt-dark);
+  font-family: font(main);
+}
+
+//==================//
+//===// Header //===//
+//==================//
+
+//===// Hero //===//
+
+.hero {
+  @include dark-theme;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  &__title-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 7;
+    background: color(bg-main);
+    padding: 1em 2em;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 1.45rem;
+    font-weight: 900;
+    line-height: 0.85;
+
+    &--secondary {
+      color: color(txt-dark);
+    }
+  }
+
+  &__img {
+    height: 22rem;
+    margin: 0 auto;
+  }
+
+  &__quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin: 0 auto;
+
+    &__text {
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-weight: bolder;
+      line-height: 1em;
+
+      & > span:not(:last-of-type) {
+        -webkit-text-stroke: 0.5px color(txt-light);
+      }
+
+      & > * {
+        display: block;
+      }
+
+      &--link {
+        color: color(accent);
+      }
+    }
+  }
+
+  &__buy-box {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 7;
+    text-align: center;
+  }
+
+  &__buy {
+    font-weight: 900;
+
+    &--btn {
+      background: color(accent);
+      color: color(txt-light);
+      text-transform: uppercase;
+      -webkit-text-stroke: 3px color(txt-main);
+      font-size: 3rem;
+
+      @include hover-bg(color(accent));
+
+      &:hover {
+        font-size: 3.15rem;
+      }
+    }
+
+    &--text {
+      color: color(accent);
+      font-size: 0.75rem;
+    }
+  }
+}
+
+//===// Navigation menu //===//
+
+.nav {
+  position: absolute;
+
+  &-toggle {
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    z-index: 9;
+  }
+
+  &-close {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+    height: 100%;
+    width: 15%;
+
+    &--visibility {
+      z-index: 8;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    background: color(bg-light);
+    border-left: 5px solid color(bg-main);
+    text-align: center;
+    transform: translateX(100%);
+    transition: opacity duration(nav-show-time) ease, visibility duration(nav-show-time) ease;
+    animation: nav-hide duration(nav-hide-time) ease-in-out;
+
+    &--visibility {
+      opacity: 1;
+      visibility: visible;
+      animation: nav-show duration(nav-show-time) ease-in-out forwards;
+    }
+  }
+
+  &__link {
+    color: color(txt-dark);
+    font-size: 1.25rem;
+    font-family: font(main);
+    transition: opacity duration(btn-anim-time) ease;
+
+    @include hover-op;
+  }
+}
+
+//================//
+//===// Main //===//
+//================//
+
+.main {
+  & section {
+    min-height: 25vh;
+    padding: 2.5em 0;
+  }
+}
+
+.section {
+  &__title {
+    text-align: center;
+    font-family: font(accent);
+    font-size: 3.5rem;
+    text-shadow: 2px 5px 3px rgba(color(bg-dark), 0.35);
+  }
+
+  // &__contet {}
+}
+
+.server {
+  @include main-theme;
+}
+
+.design-server {
+  clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
+}
+
+.dynmap {
+  @include light-theme;
+}
+
+.design-dynmap {
+  clip-path: polygon(70% 2.5vh, 100% 0, 100% 100%, 0 100%, 0 2.5vh);
+  margin: -2.5vh 0 0;
+}
+
+.play_with_us {
+  @include main-theme;
+}
+
+.design-play_with_us {
+  clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
+  margin: -2.5vh 0 0;
+}
+
+.tutorials {
+  @include light-theme;
+}
+
+.design-tutorials {
+  clip-path: polygon(70% 2.5vh, 100% 0, 100% 100%, 0 100%, 0 2.5vh);
+  margin: -2.5vh 0 0;
+}
+
+.files {
+  @include main-theme;
+}
+
+.design-files {
+  clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
+  margin: -2.5vh 0 0;
+}
+
+//==================//
+//===// Footer //===//
+//==================//
+
+// footer {}
+// .footer {}
+
+.contact {
+  @include dark-theme;
+
+  border-top: 5px solid color(accent);
+  padding: 2em 0;
+}

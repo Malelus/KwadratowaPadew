@@ -1,0 +1,37 @@
+//=============================================================//
+//===// Incorporating required transitions scss variables //===//
+//=============================================================//
+
+@use '../abstracts' as *;
+
+//===========================//
+//===// Page transition //===//
+//===========================//
+
+.slide-r-l {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
+  background: color(bg-main);
+  transition: duration(transition-time) ease-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 10vw;
+    background: color(bg-dark);
+    background-image: url('/img/logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 2.5vw;
+    transition: duration(transition-time) ease-out;
+  }
+
+  &.transition--active {
+    left: 0;
+  }
+}
