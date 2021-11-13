@@ -29,6 +29,7 @@ const backpack = document.querySelector('.prop__backpack');
 
 // - images array
 const newItems = ['backpack.gif', 'wrench.png'];
+const newItemsDesc = ['Plecak podróżnika, w sam raz na długą wyprawę.', 'Budowanie mechanizmów będzie prostsze dzięki kluczowi do obracania.'];
 
 const craftings = [
   'torch.gif',
@@ -189,31 +190,40 @@ window.onload = () => {
   const today = `${date.getDate()}.${date.getMonth() + 1}`;
 
   if (today === ('24.21' || '25.12' || '26.12')) {
-    logo.src = '/img/logo_hat.png';
-    backpack.src = '/img/props/backpack/red.png';
+    logo.src = '../img/logo_hat.png';
+    backpack.src = '../img/props/backpack/red.png';
   }
 
   if (today === ('31.12' || '1.1')) {
-    logo.src = '/img/logo_firework.png';
-    backpack.src = '/img/props/backpack/rainbow.png';
+    logo.src = '../img/logo_firework.png';
+    backpack.src = '../img/props/backpack/rainbow.png';
   }
 };
 
 //===// Images insert //===//
 
-const imgInsert = (array, box) => {
-  array.forEach((item) => {
+const imgInsert = (array, box, desc) => {
+  array.forEach((item, index) => {
+    const div = document.createElement('div');
     const img = document.createElement('img');
 
-    img.src = `/img/craftings/${item}`;
+    img.src = `../img/craftings/${item}`;
     img.title = item.charAt(0).toUpperCase() + item.substr(1, item.length - 5).replaceAll('_', ' ');
+    div.append(img);
 
-    document.querySelector(box).appendChild(img);
+    if (desc) {
+      const text = document.createElement('p');
+      text.innerText = desc[index];
+      text.classList.add('server__box-desc');
+      div.append(text);
+    }
+
+    document.querySelector(box).appendChild(div);
   });
 };
 
 // New items
-imgInsert(newItems, '.server__items-box');
+imgInsert(newItems, '.server__items-box', newItemsDesc);
 
 // Changed craftings
 imgInsert(craftings, '.server__craftings-box');

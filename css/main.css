@@ -472,11 +472,24 @@ body {
   font-size: 2.25rem;
   margin: 1.25em 0 0;
 }
+.server__box-desc {
+  text-align: center;
+  font-size: 0.8;
+  background: #f6e7d8;
+  border-bottom: 0.25em solid #f14902;
+  border-radius: 0.25em;
+  margin: 0.5em 0;
+  padding: 0.25em 1em 0em;
+}
 .server article {
   border: 5px solid #f6e7d8;
   border-radius: 10px;
-  padding: 0.1em;
-  margin: 1em auto;
+  padding: 0.5em 1em;
+}
+.server article div {
+  display: grid;
+  place-items: center;
+  padding: 1em 0;
 }
 
 .design-server {
