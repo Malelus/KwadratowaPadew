@@ -59,13 +59,12 @@ section {
     height: 5rem;
   }
 
-  // &__wrench {}
-
-  &__gold {
-    top: 160px;
+  &__wrench {
+    bottom: -15vh;
     right: 30px;
-    transform: rotate(45deg) translateX(5px);
   }
+
+  // &__gold {}
 }
 
 //================//
@@ -105,20 +104,17 @@ body {
 .hero {
   @include dark-theme;
   display: grid;
-  place-items: center;
+  align-content: space-between;
   height: 100vh;
 
-  &__title-box {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+  &__top-box {
+    position: relative;
     z-index: 7;
     background: color(bg-main);
     padding: 1em 2em;
   }
 
-  &__title {
+  &__top {
     text-transform: uppercase;
     font-size: 1.45rem;
     font-weight: 900;
@@ -129,9 +125,14 @@ body {
     }
   }
 
+  &__content {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
+
   &__img {
     height: 22rem;
-    margin: 0 auto;
   }
 
   &__quote {
@@ -139,7 +140,10 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1em;
-    margin: 0 auto;
+
+    @media screen and (max-height: 41.25em) {
+      display: none;
+    }
 
     &__text {
       text-transform: uppercase;
@@ -148,6 +152,7 @@ body {
       line-height: 1em;
 
       & > span:not(:last-of-type) {
+        user-select: none;
         -webkit-text-stroke: 0.5px color(txt-light);
       }
 
@@ -162,11 +167,8 @@ body {
   }
 
   &__buy-box {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 7;
+    position: relative;
+    z-index: 6;
     text-align: center;
   }
 
@@ -330,7 +332,7 @@ body {
 }
 
 .design-server {
-  clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
 }
 
 .dynmap {
@@ -338,7 +340,7 @@ body {
 }
 
 .design-dynmap {
-  clip-path: polygon(70% 2.5vh, 100% 0, 100% 100%, 0 100%, 0 2.5vh);
+  clip-path: polygon(0 2.5vh, 70% 2.5vh, 100% 0, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }
 
@@ -347,7 +349,8 @@ body {
 }
 
 .design-play_with_us {
-  clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
+
   margin: -2.5vh 0 0;
 }
 
@@ -356,7 +359,7 @@ body {
 }
 
 .design-tutorials {
-  clip-path: polygon(70% 2.5vh, 100% 0, 100% 100%, 0 100%, 0 2.5vh);
+  clip-path: polygon(0 2.5vh, 70% 2.5vh, 100% 0, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }
 
@@ -365,7 +368,7 @@ body {
 }
 
 .design-files {
-  clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }
 

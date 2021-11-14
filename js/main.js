@@ -47,7 +47,7 @@ const craftings = [
   'slimeball.png',
 ];
 
-const structures = ['logo.png'];
+const structures = ['placeholder.png'];
 
 //=================================//
 //===// Loading DOM variables //===//
@@ -102,7 +102,9 @@ const imagesLoaded = window.addEventListener('load', () => {
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('hamburger--active');
   nav.classList.toggle('nav__list--visibility');
-  navCloseArea.classList.toggle('nav-close--visibility');
+  nav.classList.contains('nav__list--visibility')
+    ? navCloseArea.classList.add('nav-close--visibility')
+    : navCloseArea.classList.remove('nav-close--visibility');
   rootElement.scrollTop / (rootElement.scrollHeight - rootElement.clientHeight) > 0.02 && !nav.classList.contains('nav__list--visibility')
     ? hamburger.classList.add('hamburger--visibility')
     : hamburger.classList.remove('hamburger--visibility');

@@ -279,10 +279,9 @@ section {
   position: relative;
   height: 5rem;
 }
-.prop__gold {
-  top: 160px;
+.prop__wrench {
+  bottom: -15vh;
   right: 30px;
-  transform: rotate(45deg) translateX(5px);
 }
 
 ::-webkit-scrollbar {
@@ -309,37 +308,42 @@ body {
   background: #1c191a;
   color: #f6e7d8;
   display: grid;
-  place-items: center;
+  align-content: space-between;
   height: 100vh;
 }
-.hero__title-box {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
+.hero__top-box {
+  position: relative;
   z-index: 7;
   background: #f4b324;
   padding: 1em 2em;
 }
-.hero__title {
+.hero__top {
   text-transform: uppercase;
   font-size: 1.45rem;
   font-weight: 900;
   line-height: 0.85;
 }
-.hero__title--secondary {
+.hero__top--secondary {
   color: #1c191a;
+}
+.hero__content {
+  display: grid;
+  align-content: center;
+  justify-content: center;
 }
 .hero__img {
   height: 22rem;
-  margin: 0 auto;
 }
 .hero__quote {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1em;
-  margin: 0 auto;
+}
+@media screen and (max-height: 41.25em) {
+  .hero__quote {
+    display: none;
+  }
 }
 .hero__quote__text {
   text-transform: uppercase;
@@ -348,6 +352,10 @@ body {
   line-height: 1em;
 }
 .hero__quote__text > span:not(:last-of-type) {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-text-stroke: 0.5px #f6e7d8;
 }
 .hero__quote__text > * {
@@ -357,11 +365,8 @@ body {
   color: #f14902;
 }
 .hero__buy-box {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 7;
+  position: relative;
+  z-index: 6;
   text-align: center;
 }
 .hero__buy {
@@ -499,8 +504,8 @@ body {
 }
 
 .design-server {
-  -webkit-clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
-          clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
 }
 
 .dynmap {
@@ -512,8 +517,8 @@ body {
 }
 
 .design-dynmap {
-  -webkit-clip-path: polygon(70% 2.5vh, 100% 0, 100% 100%, 0 100%, 0 2.5vh);
-          clip-path: polygon(70% 2.5vh, 100% 0, 100% 100%, 0 100%, 0 2.5vh);
+  -webkit-clip-path: polygon(0 2.5vh, 70% 2.5vh, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 2.5vh, 70% 2.5vh, 100% 0, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }
 
@@ -523,8 +528,8 @@ body {
 }
 
 .design-play_with_us {
-  -webkit-clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
-          clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }
 
@@ -537,8 +542,8 @@ body {
 }
 
 .design-tutorials {
-  -webkit-clip-path: polygon(70% 2.5vh, 100% 0, 100% 100%, 0 100%, 0 2.5vh);
-          clip-path: polygon(70% 2.5vh, 100% 0, 100% 100%, 0 100%, 0 2.5vh);
+  -webkit-clip-path: polygon(0 2.5vh, 70% 2.5vh, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 2.5vh, 70% 2.5vh, 100% 0, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }
 
@@ -548,8 +553,8 @@ body {
 }
 
 .design-files {
-  -webkit-clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
-          clip-path: polygon(30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }
 
