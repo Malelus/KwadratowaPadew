@@ -192,44 +192,44 @@ window.onload = () => {
   let today = `${date.getDate()}.${date.getMonth() + 1}`;
 
   if (today === '24.12' || today === '25.12' || today === '26.12') {
-    logo.src = './img/logo_hat.png';
+    logo.src = './img/hero_hat.png';
     backpack.src = './img/props/backpack/red.png';
   }
 
   if (today === '31.12' || today === '1.1') {
-    logo.src = './img/logo_firework.png';
+    logo.src = './img/hero_firework.png';
     backpack.src = './img/props/backpack/rainbow.png';
   }
 };
 
 //===// Images insert //===//
 
-const imgInsert = (array, folder, box, desc) => {
+const contentInsert = (array, dir, box, desc) => {
   array.forEach((item, index) => {
-    const div = document.createElement('div');
-    div.classList.add('server__container__box');
+    const box = document.createElement('div');
+    box.classList.add('server__container__box');
 
     const img = document.createElement('img');
-    img.src = `./img/content/${folder}/${item}`;
+    img.src = `./img/content/${dir}/${item}`;
     img.title = item.charAt(0).toUpperCase() + item.substr(1, item.length - 5).replaceAll('_', ' ');
-    div.append(img);
+    box.append(img);
 
     if (desc) {
       const text = document.createElement('p');
       text.innerText = desc[index];
       text.classList.add('server__element-desc');
-      div.append(text);
+      box.append(text);
     }
 
-    document.querySelector(box).appendChild(div);
+    document.querySelector(box).appendChild(box);
   });
 };
 
 // New items
-imgInsert(newItems, 'newItems', '.server__container--items', newItemsDesc);
+contentInsert(newItems, 'newItems', '.server__container--items', newItemsDesc);
 
 // Changed craftings
-imgInsert(craftings, 'craftings', '.server__container--craftings');
+contentInsert(craftings, 'craftings', '.server__container--craftings');
 
 // New structures
-imgInsert(structures, 'structures', '.server__container--structures');
+contentInsert(structures, 'structures', '.server__container--structures');
