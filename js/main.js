@@ -12,10 +12,12 @@ const transitionElement = document.querySelector('.transition');
 const hamburger = document.querySelector('.hamburger');
 const navCloseArea = document.querySelector('.nav-close');
 const nav = document.querySelector('.nav__list');
+const scrollBrakeHamburger = 0.02;
 
 // - scrollUp
 const scrollUp = document.querySelector('#scrollUp');
 const rootElement = document.documentElement;
+const scrollBrakeScrollUp = 0.1;
 
 // - scrollTo
 const scrollTo = document.querySelectorAll('#scrollTo');
@@ -29,7 +31,6 @@ const backpack = document.querySelector('.prop__backpack');
 
 // - images array
 const newItems = ['backpack.gif', 'wrench.png'];
-const newItemsDesc = ['Plecak podróżnika, w sam raz na długą wyprawę.', 'Budowanie mechanizmów będzie prostsze, dzięki kluczowi do obracania.'];
 
 const craftings = [
   'torch.gif',
@@ -49,18 +50,21 @@ const craftings = [
 
 const structures = ['placeholder.png'];
 
+// - descriptions for images
+const newItemsDesc = ['Plecak podróżnika, w sam raz na długą wyprawę.', 'Budowanie mechanizmów będzie prostsze, dzięki kluczowi do obracania.'];
+
 //=================================//
 //===// Loading DOM variables //===//
 //=================================//
 
-// Defining variables array
+// - defining variables array
 const durationsArray = [];
 const varArray = ['--transition-static'];
 
-// Defining const for global variables source and quantity of variable array
+// - defining const for global variables source and quantity of variable array
 const varGlobal = getComputedStyle(document.body);
 
-// Inserting all time durations into durations array
+// - inserting all time durations into durations array
 for (let i = 0; i < varArray.length; i++) {
   durationsArray[i] = varGlobal.getPropertyValue(varArray[i]);
 }
@@ -69,12 +73,12 @@ for (let i = 0; i < varArray.length; i++) {
 //====// Variables formating //===//
 //================================//
 
-// Subtracting `s` letter from loaded string
+// - subtracting `s` letter from loaded string
 for (let i = 0; i < varArray.length; i++) {
   durationsArray[i] = durationsArray[i].substring(0, durationsArray[i].length - 1);
 }
 
-// Setting own variable for timeout
+// - setting own variable for timeout
 const timeTransitionStatic = durationsArray[0] * 1000;
 
 //====================//
@@ -86,10 +90,10 @@ const timeTransitionStatic = durationsArray[0] * 1000;
 const imagesLoaded = window.addEventListener('load', () => {
   if (img.complete && img.naturalHeight !== 0) {
     setTimeout(() => {
-      //===// Scroll to top //===//
+      //=// Scroll to top //=//
       scrolling();
 
-      //===// Page transition //===//
+      //=// Page transition //=//
       transitionElement.classList.remove('transition--active');
     }, timeTransitionStatic);
   }
@@ -97,34 +101,42 @@ const imagesLoaded = window.addEventListener('load', () => {
 
 //===// Hamburger //===//
 
-//===// Nav toggle on hamburger event //===//
+const hamburgerVisibility = () => {
+  rootElement.scrollTop / (rootElement.scrollHeight - rootElement.clientHeight) > scrollBrakeHamburger &&
+  !hamburger.classList.contains('hamburger--active')
+    ? hamburger.classList.add('hamburger--visibility')
+    : hamburger.classList.remove('hamburger--visibility');
+};
+
+const navClose = () => {
+  nav.classList.remove('nav__list--visibility');
+  hamburger.classList.remove('hamburger--active');
+
+  if (rootElement.scrollTop / (rootElement.scrollHeight - rootElement.clientHeight) > scrollBrakeHamburger) {
+    hamburger.classList.add('hamburger--visibility');
+  }
+};
+
+//=// Nav toggle on hamburger event //=//
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('hamburger--active');
   nav.classList.toggle('nav__list--visibility');
+
   nav.classList.contains('nav__list--visibility')
     ? navCloseArea.classList.add('nav-close--visibility')
     : navCloseArea.classList.remove('nav-close--visibility');
-  rootElement.scrollTop / (rootElement.scrollHeight - rootElement.clientHeight) > 0.02 && !nav.classList.contains('nav__list--visibility')
-    ? hamburger.classList.add('hamburger--visibility')
-    : hamburger.classList.remove('hamburger--visibility');
+
+  hamburgerVisibility();
 });
 
-const navClose = () => {
-  hamburger.classList.remove('hamburger--active');
-  if (rootElement.scrollTop / (rootElement.scrollHeight - rootElement.clientHeight) > 0.02) {
-    hamburger.classList.add('hamburger--visibility');
-  }
-  nav.classList.remove('nav__list--visibility');
-};
-
-//===// Nav close on hamburger background event //===//
+//=// Nav close on hamburger background event //=//
 
 navCloseArea.addEventListener('click', () => {
   navClose();
 });
 
-//===// Nav close on hamburger escape key press //===//
+//=// Nav close on hamburger escape key press //=//
 
 document.addEventListener('keydown', (e) => {
   if (e.which === 27 && hamburger.classList.contains('hamburger--active')) {
@@ -134,19 +146,19 @@ document.addEventListener('keydown', (e) => {
 
 //===// Scroll //===//
 
-//===// Scroll up button show && Hamburger background visibility //===//
+//=// Scroll up button show && Hamburger background visibility //=//
 
 document.addEventListener('scroll', () => {
   let scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
 
-  rootElement.scrollTop / scrollTotal > 0.1 ? scrollUp.classList.add('scrollUp--active') : scrollUp.classList.remove('scrollUp--active');
+  rootElement.scrollTop / scrollTotal > scrollBrakeScrollUp
+    ? scrollUp.classList.add('scrollUp--active')
+    : scrollUp.classList.remove('scrollUp--active');
 
-  rootElement.scrollTop / scrollTotal > 0.02 && !hamburger.classList.contains('hamburger--active')
-    ? hamburger.classList.add('hamburger--visibility')
-    : hamburger.classList.remove('hamburger--visibility');
+  hamburgerVisibility();
 });
 
-//===// Scroll to the top of page button //===//
+//=// Scroll to the top of page button //=//
 
 const scrolling = () => {
   rootElement.scrollTo({
@@ -155,13 +167,13 @@ const scrolling = () => {
   });
 };
 
-//===// Scroll to top //===//
+//=// Scroll to top //=//
 
 scrollUp.addEventListener('click', () => {
   scrolling();
 });
 
-//===// Scroll to section //===//
+//=// Scroll to section //=//
 
 scrollTo.forEach((item) => {
   item.addEventListener('click', (e) => {
@@ -175,7 +187,7 @@ scrollTo.forEach((item) => {
 
 //===// Time functions //===//
 
-//===// Clock time //===//
+//=// Clock time //=//
 
 clock.addEventListener('mouseover', () => {
   const date = new Date();
@@ -225,11 +237,11 @@ const contentInsert = (array, dir, container, desc) => {
   });
 };
 
-// New items
+//=// New items //=//
 contentInsert(newItems, 'newItems', '--items', newItemsDesc);
 
-// Changed craftings
+//=// Changed craftings //=//
 contentInsert(craftings, 'craftings', '--craftings');
 
-// New structures
+//=// New structures //=//
 contentInsert(structures, 'structures', '--structures');
