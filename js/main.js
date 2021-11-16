@@ -221,15 +221,15 @@ const contentInsert = (array, dir, container, desc) => {
       box.append(text);
     }
 
-    document.querySelector(container).appendChild(box);
+    document.querySelector(`.server__container${container}`).appendChild(box);
   });
 };
 
 // New items
-contentInsert(newItems, 'newItems', '.server__container--items', newItemsDesc);
+contentInsert(newItems, 'newItems', '--items', newItemsDesc);
 
 // Changed craftings
-contentInsert(craftings, 'craftings', '.server__container--craftings');
+contentInsert(craftings, 'craftings', '--craftings');
 
 // New structures
-contentInsert(structures, 'structures', '.server__container--structures');
+contentInsert(structures, 'structures', '--structures');
