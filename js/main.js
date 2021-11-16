@@ -204,7 +204,7 @@ window.onload = () => {
 
 //===// Images insert //===//
 
-const contentInsert = (array, dir, box, desc) => {
+const contentInsert = (array, dir, container, desc) => {
   array.forEach((item, index) => {
     const box = document.createElement('div');
     box.classList.add('server__container__box');
@@ -221,7 +221,7 @@ const contentInsert = (array, dir, box, desc) => {
       box.append(text);
     }
 
-    document.querySelector(box).appendChild(box);
+    document.querySelector(container).appendChild(box);
   });
 };
 
