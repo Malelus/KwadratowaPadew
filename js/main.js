@@ -102,19 +102,22 @@ const imagesLoaded = window.addEventListener('load', () => {
 //===// Hamburger //===//
 
 const hamburgerVisibility = () => {
-  rootElement.scrollTop / (rootElement.scrollHeight - rootElement.clientHeight) > scrollBrakeHamburger &&
-  !hamburger.classList.contains('hamburger--active')
+  const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+
+  rootElement.scrollTop / scrollTotal > scrollBrakeHamburger && !hamburger.classList.contains('hamburger--active')
     ? hamburger.classList.add('hamburger--visibility')
     : hamburger.classList.remove('hamburger--visibility');
 };
 
 const navClose = () => {
-  nav.classList.remove('nav__list--visibility');
-  hamburger.classList.remove('hamburger--active');
+  const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
 
-  if (rootElement.scrollTop / (rootElement.scrollHeight - rootElement.clientHeight) > scrollBrakeHamburger) {
+  if (rootElement.scrollTop / scrollTotal > scrollBrakeHamburger) {
     hamburger.classList.add('hamburger--visibility');
   }
+
+  nav.classList.remove('nav__list--visibility');
+  hamburger.classList.remove('hamburger--active');
 };
 
 //=// Nav toggle on hamburger event //=//
@@ -139,7 +142,7 @@ navCloseArea.addEventListener('click', () => {
 //=// Nav close on hamburger escape key press //=//
 
 document.addEventListener('keydown', (e) => {
-  if (e.which === 27 && hamburger.classList.contains('hamburger--active')) {
+  if (e.key === 'Escape' && hamburger.classList.contains('hamburger--active')) {
     navClose();
   }
 });
@@ -149,7 +152,7 @@ document.addEventListener('keydown', (e) => {
 //=// Scroll up button show && Hamburger background visibility //=//
 
 document.addEventListener('scroll', () => {
-  let scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+  const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
 
   rootElement.scrollTop / scrollTotal > scrollBrakeScrollUp
     ? scrollUp.classList.add('scrollUp--active')
