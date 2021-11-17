@@ -51,7 +51,7 @@ const craftings = [
 const structures = ['placeholder.png'];
 
 // - descriptions for images
-const newItemsDesc = ['Plecak podróżnika, w sam raz na długą wyprawę.', 'Budowanie mechanizmów będzie prostsze, dzięki kluczowi do obracania.'];
+const newItemsDesc = ['Plecak podróżnika, w sam raz na długie wyprawy.', 'Idealne narzędzie do budowania mechanizmów.'];
 
 //=================================//
 //===// Loading DOM variables //===//

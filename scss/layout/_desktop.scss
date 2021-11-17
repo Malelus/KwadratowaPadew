@@ -9,4 +9,103 @@
 //=======================================//
 
 @include desktop {
+  //==================//
+  //===// Header //===//
+  //==================//
+
+  //===// Header > Hero //===//
+
+  // .hero {
+  //   display: block;
+
+  //   &__buy-box {
+  //     position: absolute;
+  //     right: 8.5%;
+  //     bottom: -7.5vh;
+  //     transform: translateX(17%);
+  //   }
+
+  //   &__buy {
+  //     padding: 1em 0.5em;
+
+  //     &--btn {
+  //       font-size: min(3rem, 2vw);
+  //     }
+
+  //     &--text {
+  //       font-size: min(1rem, 0.65vw);
+  //     }
+  //   }
+  // }
+
+  //===// Header > Navigation menu //===//
+
+  // .nav {
+  //   &__link {
+  //     font-size: min(1.35rem, 1.725vw);
+  //   }
+  // }
+
+  //================//
+  //===// Main //===//
+  //================//
+
+  // .main {
+  //   & section {
+  //     padding: 4em 0;
+  //   }
+  // }
+
+  // .section {
+  //   &__title {
+  //     text-align: left;
+  //     font-size: 5rem;
+  //   }
+  // }
+
+  //===// Main > Server //===//
+
+  // .server {
+  //   &__description {
+  //     text-align: left;
+  //     margin: 3em 0 4em;
+  //   }
+  // }
+
+  // .design-server {}
+
+  //===// Main > Dynmap //===//
+
+  // .dynmap {}
+
+  // .design-dynmap {}
+
+  //===// Main > Play with us //===//
+
+  // .play_with_us {}
+
+  // .design-play_with_us {}
+
+  //===// Main > Tutorials //===//
+
+  // .tutorials {}
+
+  // .design-tutorials {}
+
+  //===// Main > Files //===//
+
+  // .files {}
+
+  // .design-files {}
+
+  //==================//
+  //===// Footer //===//
+  //==================//
+
+  // footer {}
+  // .footer {}
+
+  //===// Footer > Contact //===//
+
+  // .contact {}
 }

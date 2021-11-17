@@ -14,7 +14,7 @@
   border: none;
   cursor: pointer;
   padding: 10px;
-  transition: transform 0.15s ease-in-out, opacity duration(btn-anim-time) ease;
+  transition: transform 0.15s ease-in-out;
   margin-right: calc(0.85em / 8);
 
   @include hover-op;

@@ -9,16 +9,179 @@
 //======================================//
 
 @include mobile {
-  // .server {
-  //   & article {
-  //     display: grid;
-  //     place-items: center;
-  //     justify-content: space-between;
-  //     grid-template-columns: 1fr 1fr;
-  //   }
+  //================//
+  //===// Body //===//
+  //================//
 
-  //   .server__box-desc {
-  //     margin-right: auto;
-  //   }
-  // }
+  body {
+    background: color(bg-dark);
+  }
+
+  //==================//
+  //===// Header //===//
+  //==================//
+
+  //===// Header > Hero //===//
+
+  .hero {
+    align-content: space-around;
+
+    &__top-box {
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      border-bottom: 5px solid color(bg-dark);
+    }
+
+    &__content {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    &__buy-box {
+      margin: 0 auto;
+    }
+
+    &__buy {
+      &--btn {
+        padding: 0.5em 1em;
+      }
+    }
+  }
+
+  //===// Header > Navigation menu //===//
+
+  .nav {
+    position: relative;
+
+    &-toggle,
+    &-close {
+      display: none;
+    }
+
+    &__list {
+      all: unset;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    &__item {
+      & + & {
+        margin-left: 2vw;
+      }
+
+      &:last-of-type {
+        padding: unset;
+        border: unset;
+        padding-left: 2vw;
+        border-left: 5px solid color(accent);
+      }
+    }
+
+    &__link {
+      font-size: min(1.3rem, 1.725vw);
+    }
+  }
+
+  //================//
+  //===// Main //===//
+  //================//
+
+  .main {
+    & section {
+      padding: 4em 0;
+    }
+  }
+
+  .section {
+    &__title {
+      text-align: left;
+      font-size: 4.25rem;
+      margin-left: 0.75em;
+    }
+  }
+
+  //===// Main > Server //===//
+
+  .server {
+    &__description {
+      font-size: 1.35rem;
+      line-height: 1.25em;
+      margin: 1.5em 0.9em 2em;
+    }
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__container {
+      display: grid;
+      justify-content: space-between;
+      align-items: baseline;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 3em;
+    }
+
+    &__element {
+      &-desc {
+        font-size: 1.2rem;
+        margin: 1.25em 0 0.5em;
+      }
+    }
+  }
+
+  .design-server {
+    clip-path: polygon(0 0, 66% 0, 70% 15vh, 100% 15vh, 100% 100%, 0 100%);
+
+    &--accent {
+      z-index: 2;
+      background: color(accent);
+      clip-path: polygon(0 0, 66% 0, 70% 15vh, 63.55% 15vh, 60.35% 3vh, 0 3vh);
+    }
+
+    &--light {
+      z-index: 1;
+      background: color(bg-light);
+      clip-path: polygon(0 0, 66% 0, 70% 15vh, 60% 15vh, 57.2% 4.5vh, 0 4.5vh);
+    }
+  }
+
+  //===// Main > Dynmap //===//
+
+  // .dynmap {}
+
+  // .design-dynmap {}
+
+  //===// Main > Play with us //===//
+
+  // .play_with_us {}
+
+  // .design-play_with_us {}
+
+  //===// Main > Tutorials //===//
+
+  // .tutorials {}
+
+  // .design-tutorials {}
+
+  //===// Main > Files //===//
+
+  // .files {}
+
+  // .design-files {}
+
+  //==================//
+  //===// Footer //===//
+  //==================//
+
+  // footer {}
+  // .footer {}
+
+  //===// Footer > Contact //===//
+
+  // .contact {}
 }

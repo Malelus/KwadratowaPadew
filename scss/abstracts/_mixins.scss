@@ -61,13 +61,41 @@
 //===// Mouse hover //===//
 
 @mixin hover-op {
+  & {
+    transition: opacity duration(btn-anim-time) ease;
+  }
+
   &:hover {
     opacity: 0.8;
   }
 }
 
 @mixin hover-bg($color: color(txt-dark)) {
+  & {
+    transition: background-color duration(btn-anim-time) ease;
+  }
+
   &:hover {
     background: rgba($color, 0.8);
+  }
+}
+
+@mixin hover-underline() {
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: color(accent);
+    transform-origin: bottom right;
+    transition: transform duration(btn-anim-time) ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 }
