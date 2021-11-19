@@ -60,7 +60,7 @@
 
         <div class="hero__top-box">
           <div class="title">
-            <a href="header" id="scrollTo" title="Kwadratowa Padew">
+            <a href="header" title="Kwadratowa Padew" id="scrollTo" data-reload>
               <h1 class="hero__top hero__top--main">Kwadratowa Padew</h1>
               <h1 class="hero__top hero__top--secondary">VI Edycja</h1>
             </a>
@@ -69,22 +69,22 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="server" class="nav__link" id="scrollTo" title="Serwer">Serwer</a>
+                <a href="server" title="Serwer" class="nav__link" id="scrollTo">Serwer</a>
               </li>
               <li class="nav__item">
-                <a href="dynmap" class="nav__link" id="scrollTo" title="Mapa naszego serwera">Dynmapa</a>
+                <a href="dynmap" title="Mapa naszego serwera" class="nav__link" id="scrollTo">Dynmapa</a>
               </li>
               <li class="nav__item">
-                <a href="play_with_us" class="nav__link" id="scrollTo" title="Zagraj z Nami!">Zagraj z Nami!</a>
+                <a href="play" title="Zagraj z Nami!" class="nav__link" id="scrollTo">Zagraj z Nami!</a>
               </li>
               <li class="nav__item">
-                <a href="tutorials" class="nav__link" id="scrollTo" title="Poradniki">Poradniki</a>
+                <a href="tutorials" title="Poradniki" class="nav__link" id="scrollTo">Poradniki</a>
               </li>
               <li class="nav__item">
-                <a href="files" class="nav__link" id="scrollTo" title="Pliki">Pliki</a>
+                <a href="files" title="Pliki" class="nav__link" id="scrollTo">Pliki</a>
               </li>
               <li class="nav__item">
-                <a href="contact" class="nav__link" id="scrollTo" title="Kontakt">Kontakt</a>
+                <a href="contact" title="Kontakt" class="nav__link" id="scrollTo">Kontakt</a>
               </li>
             </ul>
           </nav>
@@ -92,6 +92,13 @@
           <img class="prop prop__chain" src="./img/props/chain.png" />
           <img class="prop prop__clock" src="./img/props/clock.png" />
         </div>
+
+        <img class="prop prop__wrench" src="./img/props/wrench.png" />
+        <img class="prop prop__gold" src="./img/props/gold_ingot.png" />
+        <img class="prop prop__gold prop__gold--first" src="./img/props/gold_ingot.png" />
+        <img class="prop prop__gold prop__gold--second" src="./img/props/gold_ingot.png" />
+
+        <div class="shape shape__triangle-br shape__triangle-br--hero"></div>
 
         <div class="hero__content">
           <img src="./img/hero.png" alt="Logo" class="hero__img" />
@@ -101,27 +108,29 @@
             <span class="hero__quote__text">
               <span>Nic tak nie cieszy</span>
               <span>jak nowa edycja</span>
-              <span class="hero__quote__text--link copy">KPADEW.COM</span>
+              <span class="hero__quote__text--link">KPADEW.COM</span>
             </span>
           </div>
         </div>
 
         <div class="hero__buy-box">
           <p class="hero__buy hero__buy--text">Zakup dostęp, aby dołączyć do elitarnego serwera KPADEW!</p>
-          <button href="play_with_us" class="hero__buy hero__buy--btn btn btn--header" id="scrollTo" title="Kup dostęp">Kup dostęp</button>
+          <button href="play" class="hero__buy hero__buy--btn btn btn--header" id="scrollTo" title="Kup dostęp">Kup dostęp</button>
         </div>
-
-        <!-- <img class="prop prop__wrench" src="./img/props/wrench.png" /> -->
       </section>
     </header>
 
     <main class="main">
       <div class="design-server">
-        <div class="design-server--shape design-server--accent"></div>
-        <div class="design-server--shape design-server--light"></div>
+        <div class="contour design-server--accent"></div>
+        <div class="contour design-server--light"></div>
+
         <section class="server" id="server">
+          <div class="shape shape__triangle-tr shape__triangle-tr--server"></div>
+          <div class="shape shape__triangle-bl shape__triangle-bl--server"></div>
+
           <div class="container">
-            <h2 class="section__title">Serwer</h2>
+            <h2 class="section__title section__title--left">Serwer</h2>
             <div class="section__content">
               <p class="server__description">
                 Dodaliśmy dużo urozmaiceń takich jak:
@@ -142,33 +151,69 @@
       </div>
 
       <div class="design-dynmap">
+        <div class="contour design-dynmap--accent"></div>
+
         <section class="dynmap" id="dynmap">
+          <div class="shape shape__triangle-tl shape__triangle-tl--dynmap"></div>
+          <div class="shape shape__triangle-bl shape__triangle-bl--dynmap"></div>
+
           <div class="container">
-            <h2 class="section__title">Dynmapa</h2>
-            <div class="section__content"></div>
+            <h2 class="section__title section__title--left">Dynmapa</h2>
+            <div class="section__content">
+              <p class="dynmap__description">
+                Tutaj możesz rzucić okiem na mapę naszego serwera!
+                <a href="https://www.kpadew.eu:6969/" target="_blank" title="Dynmap" class="dynmap__link">
+                  <i class="fas fa-external-link-alt btn btn--icon btn--icon--rounded btn--link"></i>
+                </a>
+              </p>
+              <iframe class="dynmap__map" src="">
+                <p>Twoja przeglądarka nie obsługuje "iframes"!</p>
+              </iframe>
+            </div>
           </div>
         </section>
       </div>
 
-      <div class="design-play_with_us">
-        <section class="play_with_us" id="play_with_us">
+      <div class="design-play">
+        <div class="contour design-play--accent"></div>
+        <div class="contour design-play--light"></div>
+
+        <section class="play" id="play">
+          <div class="shape shape__triangle-tr shape__triangle-tr--play"></div>
+          <div class="shape shape__triangle-bl shape__triangle-bl--play"></div>
+          <div class="shape shape__triangle-br shape__triangle-br--play"></div>
+
           <div class="container">
             <h2 class="section__title">Zagraj z Nami!</h2>
-            <div class="section__content"></div>
+            <div class="section__content">
+              <p class="play__description">Od gry z nami dzieli Cię tylko jeden krok!</p>
+              <a href="https://tipeo.pl/kpadewpl" target="_blank" title="Kup dostęp" class="play__link">Kup dostęp</a>
+              <p class="play__description play__description--ps">PS. Środki wpłacone są przeznaczone w 100% na utrzymanie serwera.</p>
+              <div class="play__template_box">
+                <p class="play__template-desc">Wzór płatności</p>
+                <img src="./img/paying_template.png" alt="Wzór płatności" title="Wzór płatności" class="play__template" />
+              </div>
+            </div>
           </div>
         </section>
       </div>
 
       <div class="design-tutorials">
+        <div class="contour design-tutorials--accent"></div>
+
         <section class="tutorials" id="tutorials">
+          <div class="shape shape__triangle-tl shape__triangle-tl--tutorial"></div>
+
           <div class="container">
-            <h2 class="section__title">Poradniki</h2>
+            <h2 class="section__title section__title--left">Poradniki</h2>
             <div class="section__content"></div>
           </div>
         </section>
       </div>
 
       <div class="design-files">
+        <div class="contour design-files--accent"></div>
+
         <section class="files" id="files">
           <div class="container">
             <h2 class="section__title">Pliki</h2>
@@ -178,11 +223,19 @@
       </div>
     </main>
 
-    <footer class="footer" id="footer">
+    <footer class="footer">
       <section class="contact" id="contact">
         <div class="container">
-          <h2 class="section__title">Kontakt</h2>
-          <div class="section__content"></div>
+          <h2 class="section__title section__title--left">Kontakt</h2>
+          <div class="section__content">
+            <a href="https://www.facebook.com/Kpadew" target="_blank" title="Facebook" class="contact__type contact__type--fb">
+              <i class="fab fa-facebook btn btn--contact"></i>
+            </a>
+            <a href="http://m.me/Kpadew" target="_blank" title="Messenger" class="contact__type contact__type--ms">
+              <i class="fab fa-facebook-messenger btn btn--contact"></i>
+            </a>
+          </div>
+          <p class="contact__copyright">2021 &copy; Kwadratowa Padew</p>
         </div>
       </section>
     </footer>

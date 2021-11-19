@@ -5,6 +5,9 @@
 // - img for load status
 const img = document.querySelector('img');
 
+// - page reload
+const pageReload = document.querySelector('[data-reload]');
+
 // - page transition
 const transitionElement = document.querySelector('.transition');
 
@@ -85,9 +88,9 @@ const timeTransitionStatic = durationsArray[0] * 1000;
 //===// Scripts //===//
 //===================//
 
-//===// Page display after image load //===//
+//===// Transition delay to load images //===//
 
-const imagesLoaded = window.addEventListener('load', () => {
+window.addEventListener('load', () => {
   if (img.complete && img.naturalHeight !== 0) {
     setTimeout(() => {
       //=// Scroll to top //=//
@@ -97,6 +100,12 @@ const imagesLoaded = window.addEventListener('load', () => {
       transitionElement.classList.remove('transition--active');
     }, timeTransitionStatic);
   }
+});
+
+//===// Page reload //===//
+
+pageReload.addEventListener('dblclick', () => {
+  location.reload();
 });
 
 //===// Hamburger //===//
@@ -226,7 +235,8 @@ const contentInsert = (array, dir, container, desc) => {
 
     const img = document.createElement('img');
     img.src = `./img/content/${dir}/${item}`;
-    img.title = item.charAt(0).toUpperCase() + item.substr(1, item.length - 5).replaceAll('_', ' ');
+    img.alt = img.title = item.charAt(0).toUpperCase() + item.substr(1, item.length - 5).replaceAll('_', ' ');
+    img.classList.add('server__element');
     box.append(img);
 
     if (desc) {

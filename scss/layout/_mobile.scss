@@ -9,6 +9,130 @@
 //======================================//
 
 @include mobile {
+  //====================//
+  //===// Reusable //===//
+  //====================//
+
+  //===// Scroll up //===//
+
+  .scrollUp {
+    font-size: 2.25rem;
+  }
+
+  //===// Props //===//
+
+  .prop {
+    position: absolute;
+    height: 100%;
+
+    &__backpack {
+      position: relative;
+      height: 10rem;
+    }
+
+    &__wrench {
+      top: 97.5%;
+      right: 15vw;
+      height: 5rem;
+      transform: rotateY(180deg);
+    }
+
+    &__gold {
+      top: 15%;
+      right: 8vw;
+      height: 3.5rem;
+      transform: rotate(35deg);
+
+      &--first {
+        top: 68%;
+        left: 4vw;
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  //===// Shapes //===//
+
+  .shape {
+    position: absolute;
+    z-index: 2;
+    height: 0;
+    width: 0;
+
+    &__triangle-br {
+      border-bottom: 25vh solid var(--color);
+      border-left: 15vh solid transparent;
+
+      &--hero {
+        --color: #{color(bg-main)};
+        right: 0;
+        bottom: -15vh;
+      }
+
+      &--play {
+        --color: #{color(bg-light)};
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    &__triangle-tr {
+      border-top: 25vh solid var(--color);
+      border-left: 15vh solid transparent;
+
+      &--server {
+        --color: #{color(bg-dark)};
+        top: 15vh;
+        right: 0;
+      }
+
+      &--play {
+        --color: #{color(accent)};
+        top: -10vh;
+        right: 0;
+      }
+    }
+
+    &__triangle-bl {
+      border-bottom: 25vh solid var(--color);
+      border-right: 15vh solid transparent;
+
+      &--server {
+        --color: #{color(bg-light)};
+        bottom: 12.5vh;
+        left: 0;
+      }
+
+      &--dynmap {
+        --color: #{color(bg-dark)};
+        bottom: 0;
+        left: 0;
+      }
+
+      &--play {
+        --color: #{color(bg-light)};
+        bottom: 12.5vh;
+      }
+    }
+
+    &__triangle-tl {
+      border-top: 25vh solid var(--color);
+      border-right: 15vh solid transparent;
+
+      &--dynmap {
+        --color: #{color(bg-main)};
+        top: 0;
+        left: 0;
+      }
+
+      &--tutorial {
+        --color: #{color(bg-main)};
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
   //================//
   //===// Body //===//
   //================//
@@ -25,6 +149,7 @@
 
   .hero {
     align-content: space-around;
+    padding-bottom: 5vh;
 
     &__top-box {
       display: flex;
@@ -32,21 +157,54 @@
       position: fixed;
       top: 0;
       width: 100%;
-      border-bottom: 5px solid color(bg-dark);
+      border-bottom: 0.3125em solid color(bg-dark);
     }
 
     &__content {
+      display: grid;
+      place-items: center;
+      grid-template: 0.5fr 1fr / 1fr 1fr 1fr;
+      grid-template-areas:
+        'img img .'
+        'img img quote';
+    }
+
+    &__img {
+      grid-area: img;
+      height: 33rem;
+    }
+
+    &__quote {
+      grid-area: quote;
       display: flex;
-      justify-content: space-evenly;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+
+      &__text {
+        font-size: 1.25rem;
+      }
     }
 
     &__buy-box {
       margin: 0 auto;
+
+      &:hover .hero__buy--text {
+        color: rgba(color(accent), 0.8);
+        transform: translateY(-0.6em) scale(1.5);
+      }
     }
 
     &__buy {
       &--btn {
         padding: 0.5em 1em;
+
+        @include hover-underline-alt;
+      }
+
+      &--text {
+        transition: transform duration(btn-anim-time) ease-out, color duration(btn-anim-time) ease;
       }
     }
   }
@@ -71,13 +229,13 @@
 
     &__item {
       & + & {
-        margin-left: 2vw;
+        margin-left: 1.75vw;
       }
 
       &:last-of-type {
         padding: unset;
+        padding-left: 1.75vw;
         border: unset;
-        padding-left: 2vw;
         border-left: 5px solid color(accent);
       }
     }
@@ -91,27 +249,34 @@
   //===// Main //===//
   //================//
 
-  .main {
-    & section {
-      padding: 4em 0;
-    }
-  }
-
   .section {
     &__title {
-      text-align: left;
       font-size: 4.25rem;
-      margin-left: 0.75em;
+      margin-left: 0.5em;
+
+      &--left {
+        text-align: left;
+      }
+
+      &--right {
+        text-align: right;
+      }
     }
   }
 
   //===// Main > Server //===//
 
   .server {
+    padding: 8.25vh 0 4em;
+
+    & > .container {
+      margin-bottom: 12.5vh;
+    }
+
     &__description {
       font-size: 1.35rem;
       line-height: 1.25em;
-      margin: 1.5em 0.9em 2em;
+      margin: 2.5em 0.9em 2em;
     }
 
     &__title {
@@ -121,9 +286,13 @@
     &__container {
       display: grid;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       grid-template-columns: 1fr 1fr;
       gap: 0 3em;
+
+      &:last-of-type {
+        margin-bottom: 12em;
+      }
     }
 
     &__element {
@@ -135,7 +304,9 @@
   }
 
   .design-server {
+    clip-path: none;
     clip-path: polygon(0 0, 66% 0, 70% 15vh, 100% 15vh, 100% 100%, 0 100%);
+    margin: initial;
 
     &--accent {
       z-index: 2;
@@ -152,36 +323,161 @@
 
   //===// Main > Dynmap //===//
 
-  // .dynmap {}
+  .dynmap {
+    padding: 8.25vh 0 1.75em;
 
-  // .design-dynmap {}
+    &__description {
+      font-size: 1.35rem;
+      line-height: 1.25em;
+      margin: 3em 0.9em 1.25em;
+    }
+
+    &__link {
+      margin-left: 0.3em;
+    }
+  }
+
+  .design-dynmap {
+    clip-path: none;
+    clip-path: polygon(0 0, 58% 0, 62% 12.5vh, 100% 12.5vh, 100% 100%, 0 100%);
+    margin: initial;
+    margin-top: -12.5vh;
+
+    &--accent {
+      z-index: 2;
+      background: color(accent);
+      clip-path: polygon(48% 0, 54% 0, 58.35% 13.5vh, 100% 13.5vh, 100% 15vh, 52.8% 15vh);
+    }
+  }
 
   //===// Main > Play with us //===//
 
-  // .play_with_us {}
+  .play {
+    padding: 17.25vh 0 1.75em;
 
-  // .design-play_with_us {}
+    & > .container {
+      margin-bottom: 12.5vh;
+    }
+
+    &__description {
+      font-size: 1.35rem;
+      line-height: 1.25em;
+      margin: 1em 0 1.25em;
+
+      &--ps {
+        font-size: 0.775em;
+        margin: 0 0 4.5em;
+      }
+    }
+
+    &__link {
+      font-size: 2.65rem;
+    }
+
+    &__template {
+      &-desc {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .design-play {
+    clip-path: none;
+    clip-path: polygon(0 10vh, 82.15% 10vh, 85% 0, 100% 0, 100% 100%, 0 100%);
+    margin: initial;
+    margin-top: -10vh;
+
+    &--accent {
+      z-index: 2;
+      background: color(accent);
+      clip-path: polygon(0 11.5vh, 85.35% 11.5vh, 88.59% 0, 95% 0, 91% 15vh, 0 15vh);
+    }
+
+    &--light {
+      z-index: 1;
+      background: color(bg-dark);
+      clip-path: polygon(0 10vh, 82.15% 10vh, 85% 0, 95% 0, 91% 15vh, 0 15vh);
+    }
+  }
 
   //===// Main > Tutorials //===//
 
-  // .tutorials {}
+  .tutorials {
+    padding: 8.25vh 0 1.75em;
+    min-height: 50vh;
 
-  // .design-tutorials {}
+    & > .container {
+      margin-bottom: 7.5vh;
+    }
+  }
+
+  .design-tutorials {
+    clip-path: none;
+    clip-path: polygon(0 0, 61% 0, 65% 12.5vh, 100% 12.5vh, 100% 100%, 0 100%);
+    margin: initial;
+    margin-top: -12.5vh;
+
+    &--accent {
+      z-index: 2;
+      background: color(accent);
+      clip-path: polygon(51% 0, 57% 0, 61.35% 13.5vh, 100% 13.5vh, 100% 15vh, 55.8% 15vh);
+    }
+  }
 
   //===// Main > Files //===//
 
-  // .files {}
+  .files {
+    padding: 8.25vh 0 1.75em;
+    min-height: 50vh;
+  }
 
-  // .design-files {}
+  .design-files {
+    clip-path: none;
+    clip-path: polygon(0 0, 20% 5vh, 35% 2.5vh, 65% 2.5vh, 80% 5vh, 100% 0, 100% 100%, 0 100%);
+    margin: initial;
+    margin-top: -7.5vh;
+
+    &--accent {
+      z-index: 2;
+      background: color(accent);
+      clip-path: polygon(0 0, 100% 0, 100% 5vh, 80% 7.5vh, 65% 5vh, 35% 5vh, 20% 7.5vh, 0 5vh);
+    }
+  }
 
   //==================//
   //===// Footer //===//
   //==================//
 
-  // footer {}
-  // .footer {}
-
   //===// Footer > Contact //===//
 
-  // .contact {}
+  .contact {
+    border-top: 0.5em solid color(accent);
+
+    & .container {
+      display: grid;
+      place-items: center;
+      grid-template-rows: repeat(1fr, 6);
+      grid-template-areas: 'section . . contact . copyright';
+      gap: 1em;
+    }
+
+    & .section__title {
+      grid-area: section;
+    }
+
+    & .section__content {
+      grid-area: contact;
+      transform: translateY(-12.5%);
+    }
+
+    &__type {
+      font-size: 2.7rem;
+    }
+
+    &__copyright {
+      grid-area: copyright;
+      font-size: 1.2rem;
+      transform: translateY(-40%);
+    }
+  }
 }

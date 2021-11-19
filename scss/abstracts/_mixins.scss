@@ -99,3 +99,17 @@
     transform-origin: bottom left;
   }
 }
+
+@mixin hover-underline-alt() {
+  @include hover-bg(color(accent));
+  @include hover-underline;
+
+  &::after {
+    bottom: -10px;
+    transition: transform duration(btn-anim-time) ease-out, background-color duration(btn-anim-time) ease;
+  }
+
+  &:hover:after {
+    background: rgba(color(accent), 0.8);
+  }
+}

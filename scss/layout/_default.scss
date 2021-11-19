@@ -27,7 +27,7 @@ section {
 
 .scrollUp {
   right: 20px;
-  bottom: 60px;
+  bottom: 55px;
   opacity: 0;
   visibility: hidden;
 
@@ -59,9 +59,33 @@ section {
     height: 5rem;
   }
 
-  // &__wrench {}
+  &__wrench {
+    height: 5rem;
+    top: 52.5%;
+    right: 13vw;
+    transform: rotateY(180deg);
+  }
 
-  // &__gold {}
+  &__gold {
+    height: 3.5rem;
+    top: 15%;
+    right: 8vw;
+    transform: rotate(35deg);
+
+    &--first {
+      top: 58%;
+      left: 4vw;
+      transform: rotate(0deg);
+    }
+  }
+}
+
+//===// Contour //===//
+
+.contour {
+  position: absolute;
+  height: 20vh;
+  width: 100%;
 }
 
 //================//
@@ -78,8 +102,7 @@ section {
 
 ::-webkit-scrollbar-thumb {
   background: color(bg-main);
-  border: 0.15em solid color(bg-dark);
-  border-radius: 100vw;
+  border-left: 0.15em solid color(bg-dark);
 }
 
 //================//
@@ -102,19 +125,20 @@ body {
   @include dark-theme;
   display: grid;
   align-content: space-between;
+  position: relative;
   height: 100vh;
 
   &__top-box {
     position: relative;
     z-index: 7;
     background: color(bg-main);
-    padding: 1em 2em;
+    padding: 1em 1.8em;
   }
 
   &__top {
     text-transform: uppercase;
-    font-size: 1.45rem;
     font-weight: 900;
+    font-size: 1.45rem;
     line-height: 0.85;
 
     &--main {
@@ -148,7 +172,6 @@ body {
 
     &__text {
       text-transform: uppercase;
-      font-size: 1rem;
       font-weight: bolder;
       line-height: 1em;
 
@@ -184,22 +207,12 @@ body {
       font-size: 3rem;
 
       @include hover-bg(color(accent));
-
-      @include hover-underline;
-
-      &::after {
-        bottom: -10px;
-        transition: transform duration(btn-anim-time) ease-out, background-color duration(btn-anim-time) ease;
-      }
-
-      &:hover:after {
-        background: rgba(color(accent), 0.8);
-      }
     }
 
     &--text {
       color: color(accent);
-      font-size: 0.75rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.25em;
     }
   }
 }
@@ -265,14 +278,13 @@ body {
   }
 
   &__link {
-    position: relative;
     display: inline-block;
+    position: relative;
     color: color(txt-dark);
-    font-size: 1.25rem;
     font-family: font(main);
+    font-size: 1.25rem;
 
     @include hover-op;
-
     @include hover-underline;
   }
 }
@@ -280,12 +292,6 @@ body {
 //================//
 //===// Main //===//
 //================//
-
-.main {
-  & section {
-    padding: 2.5em 0;
-  }
-}
 
 .section {
   &__title {
@@ -300,16 +306,17 @@ body {
 
 .server {
   @include main-theme;
+  padding: 2.5em 0;
 
   &__description {
     text-align: center;
+    font-size: 1.25rem;
     line-height: 1.25em;
     margin: 1.5em 0 2em;
 
     &--main {
       color: color(txt-light);
       text-decoration: underline;
-      cursor: pointer;
     }
 
     &--block {
@@ -337,6 +344,12 @@ body {
   }
 
   &__element {
+    transition: transform duration(btn-anim-time) ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
     &-desc {
       text-align: center;
       background: color(bg-light);
@@ -350,34 +363,101 @@ body {
 .design-server {
   position: relative;
   clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
-
-  &--shape {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-  }
+  background: color(bg-main);
 }
 
 //===// Main > Dynmap //===//
 
 .dynmap {
   @include light-theme;
+  padding: 2.5em 0;
+
+  &__description {
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.25em;
+    margin: 1.25em 0 0.75em;
+  }
+
+  &__link {
+    margin-left: 0.5em;
+  }
+
+  &__map {
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    aspect-ratio: 4 / 3;
+    margin: 2em auto;
+    border: 5px solid color(accent);
+  }
 }
 
 .design-dynmap {
+  position: relative;
   clip-path: polygon(0 2.5vh, 70% 2.5vh, 100% 0, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }
 
 //===// Main > Play with us //===//
 
-.play_with_us {
+.play {
   @include main-theme;
+  padding: 2.5em 0;
+
+  &__description {
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.25em;
+    margin: 1.25em 0 0.75em;
+
+    &--ps {
+      font-size: 0.65em;
+      margin: 0 0 4em;
+    }
+  }
+
+  & .section__content {
+    display: grid;
+    place-items: center;
+  }
+
+  &__link {
+    position: relative;
+    background: color(accent);
+    color: color(txt-light);
+    text-align: center;
+    font-size: 2rem;
+    margin: 1em 0 0.35em;
+    padding: 0.25em 1.5em;
+
+    @include hover-underline-alt;
+  }
+
+  &__template_box {
+    display: grid;
+    place-items: center;
+    position: relative;
+    border: 5px solid color(bg-light);
+    margin-bottom: 3em;
+    padding: 1.35em 1em 0.5em;
+  }
+
+  &__template {
+    max-width: 600px;
+    width: 100%;
+
+    &-desc {
+      position: absolute;
+      top: -1em;
+      background: color(bg-main);
+      padding: 0 1em;
+    }
+  }
 }
 
-.design-play_with_us {
+.design-play {
   clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
-
   margin: -2.5vh 0 0;
 }
 
@@ -385,6 +465,7 @@ body {
 
 .tutorials {
   @include light-theme;
+  padding: 2.5em 0;
 }
 
 .design-tutorials {
@@ -396,6 +477,7 @@ body {
 
 .files {
   @include main-theme;
+  padding: 2.5em 0;
 }
 
 .design-files {
@@ -407,9 +489,6 @@ body {
 //===// Footer //===//
 //==================//
 
-// footer {}
-// .footer {}
-
 //===// Footer > Contact //===//
 
 .contact {
@@ -417,4 +496,32 @@ body {
 
   border-top: 0.5em solid color(accent);
   padding: 2em 0;
+
+  & .section__title {
+    text-align: center;
+    font-size: 2.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  & .section__content {
+    display: flex;
+    justify-content: center;
+    gap: 1.25em;
+    margin-top: 1em;
+  }
+
+  &__type {
+    font-size: 2.4rem;
+    transition: transform duration(btn-anim-time) ease-out;
+
+    &:hover {
+      transform: scale(1.15) rotate(-5deg);
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 1em;
+  }
 }

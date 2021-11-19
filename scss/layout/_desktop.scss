@@ -9,103 +9,187 @@
 //=======================================//
 
 @include desktop {
+  //====================//
+  //===// Reusable //===//
+  //====================//
+
+  //===// Scroll up //===//
+
+  .scrollUp {
+    font-size: 2.5rem;
+  }
+
+  //===// Props //===//
+
+  .prop {
+    position: absolute;
+    height: 100%;
+
+    &__backpack {
+      position: relative;
+      height: 10rem;
+    }
+
+    &__wrench {
+      top: 97.5%;
+      right: 15vw;
+      height: 5rem;
+      transform: rotateY(180deg);
+    }
+
+    &__gold {
+      top: 15%;
+      right: 8vw;
+      height: 3.5rem;
+      transform: rotate(35deg);
+
+      &--first {
+        top: 68%;
+        left: 4vw;
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  //================//
+  //===// Body //===//
+  //================//
+
+  body {
+    background: color(bg-dark);
+  }
+
   //==================//
   //===// Header //===//
   //==================//
 
   //===// Header > Hero //===//
 
-  // .hero {
-  //   display: block;
+  .hero {
+    &__quote {
+      &__text {
+        font-size: 1.35rem;
+      }
+    }
 
-  //   &__buy-box {
-  //     position: absolute;
-  //     right: 8.5%;
-  //     bottom: -7.5vh;
-  //     transform: translateX(17%);
-  //   }
-
-  //   &__buy {
-  //     padding: 1em 0.5em;
-
-  //     &--btn {
-  //       font-size: min(3rem, 2vw);
-  //     }
-
-  //     &--text {
-  //       font-size: min(1rem, 0.65vw);
-  //     }
-  //   }
-  // }
+    &__buy {
+      &--btn {
+        font-size: 3.2rem;
+      }
+    }
+  }
 
   //===// Header > Navigation menu //===//
 
-  // .nav {
-  //   &__link {
-  //     font-size: min(1.35rem, 1.725vw);
-  //   }
-  // }
+  .nav {
+    &__link {
+      font-size: min(1.35rem, 1.725vw);
+    }
+  }
 
   //================//
   //===// Main //===//
   //================//
 
-  // .main {
-  //   & section {
-  //     padding: 4em 0;
-  //   }
-  // }
-
-  // .section {
-  //   &__title {
-  //     text-align: left;
-  //     font-size: 5rem;
-  //   }
-  // }
+  .section {
+    &__title {
+      font-size: 5rem;
+      margin-left: 0.15em;
+    }
+  }
 
   //===// Main > Server //===//
 
-  // .server {
-  //   &__description {
-  //     text-align: left;
-  //     margin: 3em 0 4em;
-  //   }
-  // }
+  .server {
+    &__description {
+      text-align: left;
+      margin: 3em 0 4em;
+    }
 
-  // .design-server {}
+    &__title {
+      font-size: 3.5rem;
+    }
+
+    &__element {
+      &-desc {
+        font-size: 1.25rem;
+      }
+    }
+  }
 
   //===// Main > Dynmap //===//
 
-  // .dynmap {}
+  .dynmap {
+    &__link {
+      margin-left: 0.4em;
+    }
+  }
 
-  // .design-dynmap {}
+  .design-dynmap {
+    clip-path: none;
+    clip-path: polygon(0 0, 48% 0, 52% 12.5vh, 100% 12.5vh, 100% 100%, 0 100%);
+    margin: initial;
+    margin-top: -12.5vh;
+
+    &--accent {
+      z-index: 2;
+      background: color(accent);
+      clip-path: polygon(38% 0, 44% 0, 48.35% 13.5vh, 100% 13.5vh, 100% 15vh, 42.8% 15vh);
+    }
+  }
 
   //===// Main > Play with us //===//
 
-  // .play_with_us {}
+  .play {
+    &__description {
+      &--ps {
+        font-size: 0.9rem;
+      }
+    }
 
-  // .design-play_with_us {}
+    &__link {
+      font-size: 3.25rem;
+    }
+  }
 
   //===// Main > Tutorials //===//
 
   // .tutorials {}
 
-  // .design-tutorials {}
+  .design-tutorials {
+    clip-path: none;
+    clip-path: polygon(0 0, 51% 0, 55% 12.5vh, 100% 12.5vh, 100% 100%, 0 100%);
+    margin: initial;
+    margin-top: -12.5vh;
+
+    &--accent {
+      z-index: 2;
+      background: color(accent);
+      clip-path: polygon(41% 0, 47% 0, 51.35% 13.5vh, 100% 13.5vh, 100% 15vh, 45.8% 15vh);
+    }
+  }
 
   //===// Main > Files //===//
 
   // .files {}
 
-  // .design-files {}
-
   //==================//
   //===// Footer //===//
   //==================//
 
-  // footer {}
-  // .footer {}
-
   //===// Footer > Contact //===//
 
-  // .contact {}
+  .contact {
+    & .section__title {
+      font-size: 4rem;
+    }
+
+    &__type {
+      font-size: 3rem;
+    }
+
+    &__copyright {
+      font-size: 1.35rem;
+    }
+  }
 }
