@@ -78,6 +78,20 @@ section {
       transform: rotate(0deg);
     }
   }
+
+  &__sword {
+    height: 0;
+  }
+
+  &__model {
+    height: 0;
+  }
+}
+
+//===// Shapes //===//
+
+.shape {
+  display: none;
 }
 
 //===// Contour //===//
@@ -125,8 +139,7 @@ body {
   @include dark-theme;
   display: grid;
   align-content: space-between;
-  position: relative;
-  height: 100vh;
+  min-height: 100vh;
 
   &__top-box {
     position: relative;
@@ -286,6 +299,21 @@ body {
 
     @include hover-op;
     @include hover-underline;
+
+    &--active {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background: color(accent);
+        transform: scaleX(1);
+        transform-origin: bottom center;
+        transition: transform duration(nav-link-anim-time) ease-out;
+      }
+    }
   }
 }
 
@@ -361,7 +389,6 @@ body {
 }
 
 .design-server {
-  position: relative;
   clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
   background: color(bg-main);
 }
@@ -394,7 +421,6 @@ body {
 }
 
 .design-dynmap {
-  position: relative;
   clip-path: polygon(0 2.5vh, 70% 2.5vh, 100% 0, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }
@@ -461,11 +487,52 @@ body {
   margin: -2.5vh 0 0;
 }
 
-//===// Main > Tutorials //===//
+//===// Main > tutorials //===//
 
 .tutorials {
   @include light-theme;
   padding: 2.5em 0;
+
+  &__description {
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.25em;
+    margin: 1.25em 0 0.75em;
+  }
+
+  &__container {
+    margin: 3em 0 4em;
+
+    &__box {
+      border: 5px solid color(bg-dark);
+      padding: 1em 2em;
+      margin: 1em 0;
+      background: color(bg-main);
+
+      transition: transform duration(btn-anim-time) ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__element {
+    text-align: center;
+
+    &-desc {
+      margin: 1em 0 0.5em;
+    }
+
+    &-note {
+      display: block;
+      margin: 1em 0 0.5em;
+    }
+  }
+
+  &__link {
+    background: color(bg-main);
+  }
 }
 
 .design-tutorials {
@@ -475,12 +542,69 @@ body {
 
 //===// Main > Files //===//
 
-.files {
+.info {
   @include main-theme;
   padding: 2.5em 0;
+  min-height: 50vh;
+
+  &__description {
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.25em;
+    margin: 1.25em 0 0.75em;
+  }
+
+  &__rules {
+    margin: 0 0 4em;
+
+    &__box {
+      border: 5px solid color(bg-dark);
+      padding: 2em 1em 3em;
+      margin: 1em 0 2em;
+      background: color(bg-light);
+
+      transition: transform duration(btn-anim-time) ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &-element {
+      font-size: 0.9rem;
+
+      &-list {
+        list-style: decimal;
+        padding-left: 2.3em;
+      }
+
+      &-rule {
+        margin: 0.5em 0 0;
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  &__container {
+    display: grid;
+    place-items: center;
+    gap: 1em;
+  }
+
+  &__link {
+    position: relative;
+    background: color(accent);
+    color: color(txt-light);
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 0.1em 0 0.35em;
+    padding: 0.25em 1.5em;
+
+    @include hover-underline-alt;
+  }
 }
 
-.design-files {
+.design-info {
   clip-path: polygon(0 0, 30% 2.5vh, 100% 2.5vh, 100% 100%, 0 100%);
   margin: -2.5vh 0 0;
 }

@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./img/logo.png" />
 
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js" type="module"></script>
 
     <title>Kwadratowa Padew</title>
   </head>
@@ -50,7 +50,9 @@
     </button>
 
     <header class="header" id="header">
-      <section class="hero">
+      <section class="hero" id="hero">
+        <div class="shape shape__triangle-br shape__triangle-br--hero"></div>
+
         <div class="nav-toggle">
           <button class="hamburger">
             <span class="hamburger__box"><span class="hamburger__inner"></span></span>
@@ -60,7 +62,7 @@
 
         <div class="hero__top-box">
           <div class="title">
-            <a href="header" title="Kwadratowa Padew" id="scrollTo" data-reload>
+            <a href="hero" title="Kwadratowa Padew" id="scrollTo" data-reload>
               <h1 class="hero__top hero__top--main">Kwadratowa Padew</h1>
               <h1 class="hero__top hero__top--secondary">VI Edycja</h1>
             </a>
@@ -69,22 +71,22 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="server" title="Serwer" class="nav__link" id="scrollTo">Serwer</a>
+                <a href="server" title="Serwer" class="nav__link scrollTo-server" id="scrollTo">Serwer</a>
               </li>
               <li class="nav__item">
-                <a href="dynmap" title="Mapa naszego serwera" class="nav__link" id="scrollTo">Dynmapa</a>
+                <a href="dynmap" title="Mapa naszego serwera" class="nav__link scrollTo-dynmap" id="scrollTo">Dynmapa</a>
               </li>
               <li class="nav__item">
-                <a href="play" title="Zagraj z Nami!" class="nav__link" id="scrollTo">Zagraj z Nami!</a>
+                <a href="play" title="Zagraj z Nami!" class="nav__link scrollTo-play" id="scrollTo">Zagraj z Nami!</a>
               </li>
               <li class="nav__item">
-                <a href="tutorials" title="Poradniki" class="nav__link" id="scrollTo">Poradniki</a>
+                <a href="tutorials" title="Poradniki" class="nav__link scrollTo-tutorials" id="scrollTo">Poradniki</a>
               </li>
               <li class="nav__item">
-                <a href="files" title="Pliki" class="nav__link" id="scrollTo">Pliki</a>
+                <a href="info" title="Informacje" class="nav__link scrollTo-info" id="scrollTo">Informacje</a>
               </li>
               <li class="nav__item">
-                <a href="contact" title="Kontakt" class="nav__link" id="scrollTo">Kontakt</a>
+                <a href="contact" title="Kontakt" class="nav__link scrollTo-contact" id="scrollTo">Kontakt</a>
               </li>
             </ul>
           </nav>
@@ -94,11 +96,9 @@
         </div>
 
         <img class="prop prop__wrench" src="./img/props/wrench.png" />
-        <img class="prop prop__gold" src="./img/props/gold_ingot.png" />
-        <img class="prop prop__gold prop__gold--first" src="./img/props/gold_ingot.png" />
-        <img class="prop prop__gold prop__gold--second" src="./img/props/gold_ingot.png" />
-
-        <div class="shape shape__triangle-br shape__triangle-br--hero"></div>
+        <img class="prop prop__gold prop__gold--1" src="./img/props/gold_ingot.png" />
+        <img class="prop prop__gold prop__gold--2" src="./img/props/gold_ingot.png" />
+        <img class="prop prop__sword" src="./img/props/golden_sword.png" />
 
         <div class="hero__content">
           <img src="./img/hero.png" alt="Logo" class="hero__img" />
@@ -123,7 +123,7 @@
     <main class="main">
       <div class="design-server">
         <div class="contour design-server--accent"></div>
-        <div class="contour design-server--light"></div>
+        <div class="contour design-server-s-light"></div>
 
         <section class="server" id="server">
           <div class="shape shape__triangle-tr shape__triangle-tr--server"></div>
@@ -156,6 +156,8 @@
         <section class="dynmap" id="dynmap">
           <div class="shape shape__triangle-tl shape__triangle-tl--dynmap"></div>
           <div class="shape shape__triangle-bl shape__triangle-bl--dynmap"></div>
+
+          <img src="./img/props/model.png" alt="Model" class="prop prop__model" />
 
           <div class="container">
             <h2 class="section__title section__title--left">Dynmapa</h2>
@@ -202,22 +204,33 @@
         <div class="contour design-tutorials--accent"></div>
 
         <section class="tutorials" id="tutorials">
-          <div class="shape shape__triangle-tl shape__triangle-tl--tutorial"></div>
+          <div class="shape shape__triangle-tl shape__triangle-tl--tutorials"></div>
 
           <div class="container">
             <h2 class="section__title section__title--left">Poradniki</h2>
-            <div class="section__content"></div>
+            <div class="section__content">
+              <p class="tutorials__description">Poniżej znajdują się wyjaśnienia poszczególnych elementów znajdujących się na serwerze.</p>
+              <article class="tutorials__container"></article>
+            </div>
           </div>
         </section>
       </div>
 
-      <div class="design-files">
-        <div class="contour design-files--accent"></div>
+      <div class="design-info">
+        <div class="contour design-info--accent"></div>
+        <div class="contour design-info--light"></div>
 
-        <section class="files" id="files">
+        <section class="info" id="info">
           <div class="container">
-            <h2 class="section__title">Pliki</h2>
-            <div class="section__content"></div>
+            <h2 class="section__title">Informacje</h2>
+            <div class="section__content">
+              <p class="info__description">Pliki serwera</p>
+              <article class="info__container">
+                <a href="" title="Paczka zasobów" class="info__link"> Paczka zasobów - kpadew </a>
+              </article>
+              <p class="info__description">Regulamin serwera</p>
+              <article class="info__rules"></article>
+            </div>
           </div>
         </section>
       </div>

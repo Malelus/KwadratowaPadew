@@ -22,11 +22,7 @@
   //===// Props //===//
 
   .prop {
-    position: absolute;
-    height: 100%;
-
     &__backpack {
-      position: relative;
       height: 10rem;
     }
 
@@ -38,22 +34,32 @@
     }
 
     &__gold {
-      top: 15%;
-      right: 8vw;
-      height: 3.5rem;
-      transform: rotate(35deg);
+      height: 5rem;
 
-      &--first {
+      &--1 {
+        top: 15%;
+        right: 8vw;
+        transform: rotate(35deg);
+      }
+
+      &--2 {
         top: 68%;
         left: 4vw;
         transform: rotate(0deg);
       }
+    }
+
+    &__model {
+      height: 26.5vw;
+      right: 0;
+      bottom: 9vh;
     }
   }
 
   //===// Shapes //===//
 
   .shape {
+    display: initial;
     position: absolute;
     z-index: 2;
     height: 0;
@@ -125,7 +131,7 @@
         left: 0;
       }
 
-      &--tutorial {
+      &--tutorials {
         --color: #{color(bg-main)};
         top: 0;
         left: 0;
@@ -229,12 +235,12 @@
 
     &__item {
       & + & {
-        margin-left: 1.75vw;
+        margin-left: 1.05vw;
       }
 
       &:last-of-type {
         padding: unset;
-        padding-left: 1.75vw;
+        padding-left: 1vw;
         border: unset;
         border-left: 5px solid color(accent);
       }
@@ -267,7 +273,7 @@
   //===// Main > Server //===//
 
   .server {
-    padding: 8.25vh 0 4em;
+    padding: max(8.25vh, 4.25rem) 0 4em;
 
     & > .container {
       margin-bottom: 12.5vh;
@@ -324,7 +330,7 @@
   //===// Main > Dynmap //===//
 
   .dynmap {
-    padding: 8.25vh 0 1.75em;
+    padding: max(8.25vh, 4.25rem) 0 1.75em;
 
     &__description {
       font-size: 1.35rem;
@@ -353,7 +359,7 @@
   //===// Main > Play with us //===//
 
   .play {
-    padding: 17.25vh 0 1.75em;
+    padding: max(17.25vh, 4.25rem) 0 1.75em;
 
     & > .container {
       margin-bottom: 12.5vh;
@@ -403,11 +409,80 @@
   //===// Main > Tutorials //===//
 
   .tutorials {
-    padding: 8.25vh 0 1.75em;
-    min-height: 50vh;
+    padding: max(8.25vh, 4.25rem) 0 1.75em;
 
     & > .container {
-      margin-bottom: 7.5vh;
+      margin-bottom: 10vh;
+    }
+
+    &__description {
+      font-size: 1.35rem;
+      line-height: 1.25em;
+      margin: 3em 0.9em 1.25em;
+    }
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-rows: minmax(100px, auto);
+      grid-auto-flow: dense;
+      gap: 1rem;
+      margin: 3em 0 8em;
+
+      &__box {
+        margin: initial;
+
+        // Backpacks 1
+        &:nth-child(1) {
+          grid-row: span 1 / 2;
+          grid-column: span 2;
+        }
+        // Wrench 2
+        &:nth-child(2) {
+          grid-row: span 1;
+          grid-column: span 2;
+        }
+        // Graves 3
+        &:nth-child(3) {
+          grid-row: span 1 / 1;
+          grid-column: span 2;
+        }
+        // Shield 5
+        &:nth-child(5) {
+          grid-row: span 1 / 4;
+          grid-column: span 2;
+        }
+        // DiscordSRV 7
+        &:nth-child(7) {
+          grid-row: span 1 / 6;
+          grid-column: span 1;
+        }
+        // Essentials 8
+        &:nth-child(8) {
+          grid-row: span 1 / 5;
+          grid-column: span 1;
+        }
+        // SkinsRestorer 13
+        &:nth-child(13) {
+          grid-row: span 1;
+          grid-column: span 2;
+        }
+        // XPKeeper 15
+        &:nth-child(15) {
+          grid-row: span 1 / 6;
+          grid-column: span 1;
+        }
+      }
+    }
+
+    &__element {
+      &-desc {
+        font-size: 1.2rem;
+      }
+
+      &-note {
+        font-size: 1.1rem;
+      }
     }
   }
 
@@ -426,21 +501,60 @@
 
   //===// Main > Files //===//
 
-  .files {
-    padding: 8.25vh 0 1.75em;
-    min-height: 50vh;
+  .info {
+    padding: max(9.5vh, 4.25rem) 0 1.75em;
+
+    &__description {
+      font-size: 1.35rem;
+      line-height: 1.25em;
+      margin: 3em 0.9em 1.25em;
+    }
+
+    &__link {
+      font-size: 1.45rem;
+    }
+
+    &__rules {
+      &__box {
+        padding: 3em 3em 4em;
+      }
+
+      &-element {
+        font-size: 1.2rem;
+
+        &-list {
+          padding-left: 3.5em;
+        }
+
+        &-rule {
+          margin: 0.65em 0 0;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    &__container {
+      display: flex;
+      justify-content: center;
+    }
   }
 
-  .design-files {
+  .design-info {
     clip-path: none;
     clip-path: polygon(0 0, 20% 5vh, 35% 2.5vh, 65% 2.5vh, 80% 5vh, 100% 0, 100% 100%, 0 100%);
     margin: initial;
-    margin-top: -7.5vh;
+    margin-top: -10vh;
 
     &--accent {
       z-index: 2;
       background: color(accent);
       clip-path: polygon(0 0, 100% 0, 100% 5vh, 80% 7.5vh, 65% 5vh, 35% 5vh, 20% 7.5vh, 0 5vh);
+    }
+
+    &--light {
+      z-index: 1;
+      background: color(bg-light);
+      clip-path: polygon(0 0, 100% 0, 100% 9vh, 80% 10vh, 65% 8vh, 35% 8vh, 20% 10vh, 0 9vh);
     }
   }
 

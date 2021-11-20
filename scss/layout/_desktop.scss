@@ -22,32 +22,38 @@
   //===// Props //===//
 
   .prop {
-    position: absolute;
-    height: 100%;
-
     &__backpack {
-      position: relative;
-      height: 10rem;
+      height: min(15rem, 15vw);
     }
 
     &__wrench {
-      top: 97.5%;
+      top: 95%;
       right: 15vw;
-      height: 5rem;
+      height: 8rem;
       transform: rotateY(180deg);
     }
 
     &__gold {
-      top: 15%;
-      right: 8vw;
-      height: 3.5rem;
-      transform: rotate(35deg);
+      height: 6rem;
 
-      &--first {
-        top: 68%;
-        left: 4vw;
-        transform: rotate(0deg);
+      &--1 {
+        top: 15%;
+        right: 8vw;
+        transform: rotate(35deg);
       }
+
+      &--2 {
+        top: 30%;
+        left: 9vw;
+        transform: rotate(12deg);
+      }
+    }
+
+    &__sword {
+      top: 75%;
+      left: 2vw;
+      height: 10rem;
+      transform: rotate(0deg);
     }
   }
 
@@ -66,7 +72,15 @@
   //===// Header > Hero //===//
 
   .hero {
+    height: 100vh;
+
+    &__img {
+      height: min(44rem, 40vw);
+    }
+
     &__quote {
+      transform: translateX(-35%);
+
       &__text {
         font-size: 1.35rem;
       }
@@ -154,7 +168,77 @@
 
   //===// Main > Tutorials //===//
 
-  // .tutorials {}
+  .tutorials {
+    &__container {
+      &__box {
+        // Backpacks 1
+        &:nth-child(1) {
+          grid-row: span 1 / 4;
+          grid-column: span 3;
+        }
+        // Graves 3
+        &:nth-child(3) {
+          grid-row: span 1;
+          grid-column: span 3;
+        }
+        // Heads 4
+        &:nth-child(4) {
+          grid-row: span 1 / 1;
+          grid-column: 3 / span 1;
+        }
+        // Shield 5
+        &:nth-child(5) {
+          grid-row: span 1;
+          grid-column: span 2;
+        }
+        // DiscordSRV 7
+        &:nth-child(7) {
+          grid-row: span 1 / 7;
+          grid-column: 3 / span 1;
+        }
+        // Essentials 8
+        &:nth-child(8) {
+          grid-row: span 1 / 3;
+          grid-column: span 1;
+        }
+        // ImageOnMap 9
+        &:nth-child(9) {
+          grid-row: span 1 / 8;
+          grid-column: span 1;
+        }
+        // MarriageMaster 11
+        &:nth-child(11) {
+          grid-row: span 1 / 5;
+          grid-column: 1 / span 1;
+        }
+        // SkinsRestorer 13
+        &:nth-child(13) {
+          grid-row: span 1 / 6;
+          grid-column: span 3;
+        }
+        // StackMob 14
+        &:nth-child(14) {
+          grid-row: span 1;
+          grid-column: span 2;
+        }
+        // XPKeeper 15
+        &:nth-child(15) {
+          grid-row: span 1 / 5;
+          grid-column: span 1;
+        }
+      }
+
+      &__element {
+        &-desc {
+          font-size: 1.25rem;
+        }
+
+        &-note {
+          font-size: 1.15rem;
+        }
+      }
+    }
+  }
 
   .design-tutorials {
     clip-path: none;
@@ -171,7 +255,18 @@
 
   //===// Main > Files //===//
 
-  // .files {}
+  .info {
+    &__rules {
+      &-element {
+        font-size: 1.25rem;
+
+        &-rule {
+          margin: 0.65em 0 0;
+          font-size: 1.15rem;
+        }
+      }
+    }
+  }
 
   //==================//
   //===// Footer //===//

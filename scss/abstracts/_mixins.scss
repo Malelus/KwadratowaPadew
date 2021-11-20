@@ -106,6 +106,7 @@
 
   &::after {
     bottom: -10px;
+    pointer-events: none;
     transition: transform duration(btn-anim-time) ease-out, background-color duration(btn-anim-time) ease;
   }
 

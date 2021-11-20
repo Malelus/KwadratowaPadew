@@ -22,39 +22,22 @@ const scrollUp = document.querySelector('#scrollUp');
 const rootElement = document.documentElement;
 const scrollBrakeScrollUp = 0.1;
 
+// - section detector
+const size = document.documentElement;
+const sections = document.querySelectorAll('section');
+const links = document.querySelectorAll('.nav__link');
+
 // - scrollTo
 const scrollTo = document.querySelectorAll('#scrollTo');
 
 // - clock
 const clock = document.querySelector('.prop__clock');
 
-// - img change on christmas
+// - img change
 const logo = document.querySelector('.hero__img');
 const backpack = document.querySelector('.prop__backpack');
 
-// - images array
-const newItems = ['backpack.gif', 'wrench.png'];
-
-const craftings = [
-  'torch.gif',
-  'chain.png',
-  'chain_recycle.gif',
-  'beacon.png',
-  'crying_obsidian.png',
-  'enchanting_table.png',
-  'eye_of_ender.png',
-  'ender_chest.png',
-  'shield.gif',
-  'rotten_flesh_drying.gif',
-  'dispenser.gif',
-  'horse_armor.gif',
-  'slimeball.png',
-];
-
-const structures = ['placeholder.png'];
-
-// - descriptions for images
-const newItemsDesc = ['Plecak podróżnika, w sam raz na długie wyprawy.', 'Idealne narzędzie do budowania mechanizmów.'];
+import { newItems, craftings, structures, tutorials, rules } from './content.js';
 
 //=================================//
 //===// Loading DOM variables //===//
@@ -185,6 +168,34 @@ scrollUp.addEventListener('click', () => {
   scrolling();
 });
 
+//=// Section highlight //=//
+
+window.addEventListener('scroll', () => {
+  let current = '';
+
+  const offset = size.scrollTop + window.innerHeight;
+  const height = size.offsetHeight;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (offset >= height) {
+      current = 'contact';
+    } else if (scrollY >= sectionTop - sectionHeight / 30) {
+      current = '';
+      current = section.getAttribute('id');
+    }
+  });
+
+  links.forEach((link) => {
+    link.classList.remove('nav__link--active');
+    if (link.classList.contains(`scrollTo-${current}`)) {
+      link.classList.add('nav__link--active');
+    }
+  });
+});
+
 //=// Scroll to section //=//
 
 scrollTo.forEach((item) => {
@@ -228,22 +239,22 @@ window.onload = () => {
 
 //===// Images insert //===//
 
-const contentInsert = (array, dir, container, desc) => {
-  array.forEach((item, index) => {
+const contentInsertImg = (array, dir, container) => {
+  array.forEach((item) => {
     const box = document.createElement('div');
     box.classList.add('server__container__box');
 
     const img = document.createElement('img');
-    img.src = `./img/content/${dir}/${item}`;
-    img.alt = img.title = item.charAt(0).toUpperCase() + item.substr(1, item.length - 5).replaceAll('_', ' ');
+    img.src = `./img/content/${dir}/${item[0]}`;
+    img.alt = img.title = item[1];
     img.classList.add('server__element');
     box.append(img);
 
-    if (desc) {
-      const text = document.createElement('p');
-      text.innerText = desc[index];
-      text.classList.add('server__element-desc');
-      box.append(text);
+    if (item[2]) {
+      const desc = document.createElement('p');
+      desc.innerText = item[2];
+      desc.classList.add('server__element-desc');
+      box.append(desc);
     }
 
     document.querySelector(`.server__container${container}`).appendChild(box);
@@ -251,10 +262,76 @@ const contentInsert = (array, dir, container, desc) => {
 };
 
 //=// New items //=//
-contentInsert(newItems, 'newItems', '--items', newItemsDesc);
+contentInsertImg(newItems, 'newItems', '--items');
 
 //=// Changed craftings //=//
-contentInsert(craftings, 'craftings', '--craftings');
+contentInsertImg(craftings, 'craftings', '--craftings');
 
 //=// New structures //=//
-contentInsert(structures, 'structures', '--structures');
+contentInsertImg(structures, 'structures', '--structures');
+
+//===// Tutorial insert //===//
+
+const contentInsertTut = (array, container) => {
+  array.forEach((item) => {
+    const box = document.createElement('div');
+    box.classList.add('tutorials__container__box');
+
+    const header = document.createElement('h3');
+    header.classList.add('tutorials__element');
+    header.innerText = item[0];
+    box.append(header);
+
+    const desc = document.createElement('p');
+    desc.classList.add('tutorials__element-desc');
+    desc.innerText = item[1];
+    box.append(desc);
+
+    if (item[2]) {
+      item[2].forEach((noteItem) => {
+        const note = document.createElement('code');
+        note.classList.add('tutorials__element-note');
+        note.innerHTML = noteItem;
+        box.append(note);
+      });
+    }
+
+    document.querySelector(container).appendChild(box);
+  });
+};
+
+//=// Tutorials //=//
+contentInsertTut(tutorials, '.tutorials__container');
+
+//===// Rules insert //===//
+
+const contentInsertRules = (array, container) => {
+  array.forEach((item, index) => {
+    const box = document.createElement('div');
+    box.classList.add('info__rules__box');
+
+    const header = document.createElement('h3');
+    header.classList.add('info__rules-element');
+    header.innerText = `§${index + 1} ${item[0]}`;
+    box.append(header);
+
+    if (item[1]) {
+      const list = document.createElement('ol');
+      list.classList.add('info__rules-element-list');
+
+      item[1].forEach((rule) => {
+        const item = document.createElement('li');
+        item.classList.add('info__rules-element-rule');
+        item.innerText = rule;
+        list.append(item);
+      });
+
+      box.append(list);
+    }
+
+    document.querySelector(container).appendChild(box);
+  });
+};
+
+//=// Rules //=//
+contentInsertRules(rules, '.info__rules');
