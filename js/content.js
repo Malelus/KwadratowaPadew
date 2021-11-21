@@ -5,80 +5,82 @@
 // - new items
 export const newItems = [
   [
-    'backpack.gif', 'Plecak',
+    'Plecak',
+    'backpack.gif',
     'Plecak podróżnika, w sam raz na długie wyprawy.'
   ],
   [
+    'Klucz',
     'wrench.png',
-    'Klucz', 'Idealne narzędzie do budowania mechanizmów.'
+    'Idealne narzędzie do budowania mechanizmów.'
   ],
 ];
 
 // - changed craftings
 export const craftings = [
   [
-  'torch.gif',
-  'Pochodnia'
+    'Pochodnia',
+    'torch.gif'
   ],
   [
-  'chain.png',
-  'Łańcuch'
+    'Łańcuch',
+    'chain.png'
   ],
   [
-  'chain_recycle.gif',
-  'Recykling łańcucha'
+    'Recykling łańcucha',
+    'chain_recycle.gif'
   ],
   [
-  'beacon.png',
-  'Magiczna latarnia'
+    'Magiczna latarnia',
+    'beacon.png'
   ],
   [
-  'crying_obsidian.png',
-  'Płaczący obsydian'
+    'Płaczący obsydian',
+    'crying_obsidian.png'
   ],
   [
-  'enchanting_table.png',
-  'Stół do zaklinania'
+    'Stół do zaklinania',
+    'enchanting_table.png'
   ],
   [
-  'eye_of_ender.png',
-  'Oko Endera'
+    'Oko Endera',
+    'eye_of_ender.png'
   ],
   [
-  'ender_chest.png',
-  'Skrzynia Endu'
+    'Skrzynia Endu',
+    'ender_chest.png'
   ],
   [
-  'shield.gif',
-  'Tarcza'
+    'Tarcza',
+    'shield.gif'
   ],
   [
-  'rotten_flesh_drying.gif',
-  'Suszenie zgniłego mięsa'
+    'Suszenie zgniłego mięsa',
+    'rotten_flesh_drying.gif'
   ],
   [
-  'dispenser.gif',
-  'Dozownik'
+    'Dozownik',
+    'dispenser.gif'
   ],
   [
-  'horse_armor.gif',
-  'Zbroja końska'
+    'Zbroja konna',
+    'horse_armor.gif'
   ],
   [
-  'slimeball.png',
-  'Kula szlamu'
+    'Kula szlamu',
+    'slimeball.png'
   ],
 ];
 
 // - structures
 export const structures = [
   [
-    'placeholder.png',
-    'Placeholder'
+    'Placeholder',
+    'placeholder.png'
   ],
   [
-    'placeholder.png',
-    'Placeholder'
+    'Placeholder',
+    'placeholder.png'
   ],
 ];
 
@@ -117,7 +119,7 @@ export const tutorials = [
   // Shield 5
   [
     'Tarcza',
-    'Prócz zmienionego craftingu podczas blokowania obrażeń dostajesz efekt głodu na czas blokowania.',
+    'Prócz zmienionego craftingu podczas blokowania obrażeń dostajesz efekt głodu na krótki czas.',
     [
       '<b>! Uwaga</b>: Blokowanie strzał nie daje tego efektu.'
     ],
@@ -125,7 +127,7 @@ export const tutorials = [
   // Brevery 6
   [
     'Brevery',
-    'Ciekawy plugin, który daj możliwosć produkcji własnego alkoholu.'
+    'Ciekawy plugin, który daje możliwosć produkcji własnego alkoholu.'
   ],
   // DiscordSRV 7
   [
@@ -163,7 +165,7 @@ export const tutorials = [
   // SkinsRestorer 13
   [
     'SkinsRestorer',
-    'Osoby nie posiadające konta premium nie muszą czuć się pokrzywdzone, ponieważ jest możliwość ustawienia sobie jakiegokolwiek skina, wpisując /skin (link do skina).',
+    'Osoby nie posiadające konta premium nie muszą czuć się pokrzywdzone, ponieważ jest możliwość ustawienia sobie jakiegokolwiek skina, wpisując <i>/skin (link do skina)</i>.',
     [
       '<b>! Uwaga</b>: Zalecamy używać strony <a href="https://www.minecraftskins.com/" target="_blank" title="SKINDEX"><i class="fas fa-external-link-alt btn btn--icon btn--icon--rounded btn--link tutorials__link"></i></a>.'
     ],
@@ -179,7 +181,7 @@ export const tutorials = [
   // XPKeeper 15
   [
     'XP Keeper',
-    'Jeżeli masz dużą ilość punktó doświadczenia możesz je odłożyć do tabliczki.',
+    'Jeżeli masz dużą ilość punktów doświadczenia możesz je odłożyć do tabliczki.',
     [
       '<b>! Uwaga</b>: Pierwszy wiersz tabliczki: "[XP]"'
     ]

@@ -15,15 +15,11 @@ const transitionElement = document.querySelector('.transition');
 const hamburger = document.querySelector('.hamburger');
 const navCloseArea = document.querySelector('.nav-close');
 const nav = document.querySelector('.nav__list');
-const scrollBrakeHamburger = 0.02;
 
 // - scrollUp
 const scrollUp = document.querySelector('#scrollUp');
-const rootElement = document.documentElement;
-const scrollBrakeScrollUp = 0.1;
 
 // - section detector
-const size = document.documentElement;
 const sections = document.querySelectorAll('section');
 const links = document.querySelectorAll('.nav__link');
 
@@ -37,62 +33,48 @@ const clock = document.querySelector('.prop__clock');
 const logo = document.querySelector('.hero__img');
 const backpack = document.querySelector('.prop__backpack');
 
-import { newItems, craftings, structures, tutorials, rules } from './content.js';
+// - DOM structure
+const rootElement = document.documentElement;
 
-//=================================//
-//===// Loading DOM variables //===//
-//=================================//
-
-// - defining variables array
-const durationsArray = [];
-const varArray = ['--transition-static'];
-
-// - defining const for global variables source and quantity of variable array
+// - DOM variables
 const varGlobal = getComputedStyle(document.body);
 
-// - inserting all time durations into durations array
-for (let i = 0; i < varArray.length; i++) {
-  durationsArray[i] = varGlobal.getPropertyValue(varArray[i]);
-}
-
-//================================//
-//====// Variables formating //===//
-//================================//
-
-// - subtracting `s` letter from loaded string
-for (let i = 0; i < varArray.length; i++) {
-  durationsArray[i] = durationsArray[i].substring(0, durationsArray[i].length - 1);
-}
-
-// - setting own variable for timeout
-const timeTransitionStatic = durationsArray[0] * 1000;
-
 //====================//
-//===// Scripts //===//
-//===================//
+//===// Variables//===//
+//====================//
 
-//===// Transition delay to load images //===//
+// - hamburger
+const scrollBrakeHamburger = 0.02;
 
-window.addEventListener('load', () => {
-  if (img.complete && img.naturalHeight !== 0) {
-    setTimeout(() => {
-      //=// Scroll to top //=//
-      scrolling();
+// - scrollUp
+const scrollBrakeScrollUp = 0.1;
 
-      //=// Page transition //=//
-      transitionElement.classList.remove('transition--active');
-    }, timeTransitionStatic);
-  }
+// - content arrays
+import { newItems, craftings, structures, tutorials, rules } from './content.js';
+
+// - DOM variables
+let varArray = ['--transition-static'];
+
+//======================//
+//===// Functions //===//
+//=====================//
+
+//=// scroll to top //=//
+const scrolling = () => {
+  rootElement.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
+//=// DOM variables format //=//
+varArray.forEach((variable, index) => {
+  let tempVar = varGlobal.getPropertyValue(variable);
+  tempVar = tempVar.substring(1, tempVar.length - 1);
+  varArray[index] = tempVar *= 1000;
 });
 
-//===// Page reload //===//
-
-pageReload.addEventListener('dblclick', () => {
-  location.reload();
-});
-
-//===// Hamburger //===//
-
+//=// hamburger visibility //=//
 const hamburgerVisibility = () => {
   const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
 
@@ -101,6 +83,7 @@ const hamburgerVisibility = () => {
     : hamburger.classList.remove('hamburger--visibility');
 };
 
+//=// navigation menu close //=//
 const navClose = () => {
   const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
 
@@ -112,141 +95,15 @@ const navClose = () => {
   hamburger.classList.remove('hamburger--active');
 };
 
-//=// Nav toggle on hamburger event //=//
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('hamburger--active');
-  nav.classList.toggle('nav__list--visibility');
-
-  nav.classList.contains('nav__list--visibility')
-    ? navCloseArea.classList.add('nav-close--visibility')
-    : navCloseArea.classList.remove('nav-close--visibility');
-
-  hamburgerVisibility();
-});
-
-//=// Nav close on hamburger background event //=//
-
-navCloseArea.addEventListener('click', () => {
-  navClose();
-});
-
-//=// Nav close on hamburger escape key press //=//
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && hamburger.classList.contains('hamburger--active')) {
-    navClose();
-  }
-});
-
-//===// Scroll //===//
-
-//=// Scroll up button show && Hamburger background visibility //=//
-
-document.addEventListener('scroll', () => {
-  const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-
-  rootElement.scrollTop / scrollTotal > scrollBrakeScrollUp
-    ? scrollUp.classList.add('scrollUp--active')
-    : scrollUp.classList.remove('scrollUp--active');
-
-  hamburgerVisibility();
-});
-
-//=// Scroll to the top of page button //=//
-
-const scrolling = () => {
-  rootElement.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
-
-//=// Scroll to top //=//
-
-scrollUp.addEventListener('click', () => {
-  scrolling();
-});
-
-//=// Section highlight //=//
-
-window.addEventListener('scroll', () => {
-  let current = '';
-
-  const offset = size.scrollTop + window.innerHeight;
-  const height = size.offsetHeight;
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-
-    if (offset >= height) {
-      current = 'contact';
-    } else if (scrollY >= sectionTop - sectionHeight / 30) {
-      current = '';
-      current = section.getAttribute('id');
-    }
-  });
-
-  links.forEach((link) => {
-    link.classList.remove('nav__link--active');
-    if (link.classList.contains(`scrollTo-${current}`)) {
-      link.classList.add('nav__link--active');
-    }
-  });
-});
-
-//=// Scroll to section //=//
-
-scrollTo.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const targetSection = document.getElementById(item.getAttribute('href'));
-
-    targetSection != null ? (targetSection.scrollIntoView({ behavior: 'smooth' }), navClose()) : alert('No scroll target');
-  });
-});
-
-//===// Time functions //===//
-
-//=// Clock time //=//
-
-clock.addEventListener('mouseover', () => {
-  const date = new Date();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-
-  clock.title = `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
-});
-
-//===// Change hero images //===//
-
-window.onload = () => {
-  const date = new Date();
-  let today = `${date.getDate()}.${date.getMonth() + 1}`;
-
-  if (today === '24.12' || today === '25.12' || today === '26.12') {
-    logo.src = './img/hero_hat.png';
-    backpack.src = './img/props/backpack/red.png';
-  }
-
-  if (today === '31.12' || today === '1.1') {
-    logo.src = './img/hero_firework.png';
-    backpack.src = './img/props/backpack/rainbow.png';
-  }
-};
-
-//===// Images insert //===//
-
-const contentInsertImg = (array, dir, container) => {
+//=// Images insert //=//
+const contentInsertImg = (array, container, dir) => {
   array.forEach((item) => {
     const box = document.createElement('div');
     box.classList.add('server__container__box');
 
     const img = document.createElement('img');
-    img.src = `./img/content/${dir}/${item[0]}`;
-    img.alt = img.title = item[1];
+    img.src = `./img/content/${dir}/${item[1]}`;
+    img.alt = img.title = item[0];
     img.classList.add('server__element');
     box.append(img);
 
@@ -261,17 +118,7 @@ const contentInsertImg = (array, dir, container) => {
   });
 };
 
-//=// New items //=//
-contentInsertImg(newItems, 'newItems', '--items');
-
-//=// Changed craftings //=//
-contentInsertImg(craftings, 'craftings', '--craftings');
-
-//=// New structures //=//
-contentInsertImg(structures, 'structures', '--structures');
-
-//===// Tutorial insert //===//
-
+//=// Tutorials insert //=//
 const contentInsertTut = (array, container) => {
   array.forEach((item) => {
     const box = document.createElement('div');
@@ -284,7 +131,7 @@ const contentInsertTut = (array, container) => {
 
     const desc = document.createElement('p');
     desc.classList.add('tutorials__element-desc');
-    desc.innerText = item[1];
+    desc.innerHTML = item[1];
     box.append(desc);
 
     if (item[2]) {
@@ -300,11 +147,7 @@ const contentInsertTut = (array, container) => {
   });
 };
 
-//=// Tutorials //=//
-contentInsertTut(tutorials, '.tutorials__container');
-
-//===// Rules insert //===//
-
+//=// Rules insert //=//
 const contentInsertRules = (array, container) => {
   array.forEach((item, index) => {
     const box = document.createElement('div');
@@ -332,6 +175,143 @@ const contentInsertRules = (array, container) => {
     document.querySelector(container).appendChild(box);
   });
 };
+
+//====================//
+//===// Scripts //===//
+//===================//
+
+//===// Transition delay for images load //===//
+window.addEventListener('load', () => {
+  if (img.complete && img.naturalHeight !== 0) {
+    setTimeout(() => {
+      scrolling();
+
+      transitionElement.classList.remove('transition--active');
+    }, varArray[0]);
+  }
+});
+
+//===// Page reload //===//
+pageReload.addEventListener('dblclick', () => {
+  location.reload();
+});
+
+//===// Navigation menu toggle on hamburger click //===//
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('hamburger--active');
+  nav.classList.toggle('nav__list--visibility');
+
+  nav.classList.contains('nav__list--visibility')
+    ? navCloseArea.classList.add('nav-close--visibility')
+    : navCloseArea.classList.remove('nav-close--visibility');
+
+  hamburgerVisibility();
+});
+
+//===// Navigation menu close on outside click //===//
+navCloseArea.addEventListener('click', () => {
+  navClose();
+});
+
+//===// Navigation menu on escape press //==//
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && hamburger.classList.contains('hamburger--active')) {
+    navClose();
+  }
+});
+
+//===// Scroll up button show && Hamburger background visibility //===//
+document.addEventListener('scroll', () => {
+  const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+
+  rootElement.scrollTop / scrollTotal > scrollBrakeScrollUp
+    ? scrollUp.classList.add('scrollUp--active')
+    : scrollUp.classList.remove('scrollUp--active');
+
+  hamburgerVisibility();
+});
+
+//===// Scroll to top on scroll up button press //===//
+scrollUp.addEventListener('click', () => {
+  scrolling();
+});
+
+//===// Highlighting the menu button related to its section //===//
+window.addEventListener('scroll', () => {
+  let current = '';
+
+  const offset = rootElement.scrollTop + window.innerHeight;
+  const height = rootElement.offsetHeight;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (offset >= height) {
+      current = 'contact';
+    } else if (scrollY >= sectionTop - sectionHeight / 30) {
+      current = '';
+      current = section.getAttribute('id');
+    }
+  });
+
+  links.forEach((link) => {
+    link.classList.remove('nav__link--active');
+    if (link.classList.contains(`scrollTo-${current}`)) {
+      link.classList.add('nav__link--active');
+    }
+  });
+});
+
+//===// Scroll to section //===//
+scrollTo.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const targetSection = document.getElementById(item.getAttribute('href'));
+
+    targetSection != null ? (targetSection.scrollIntoView({ behavior: 'smooth' }), navClose()) : alert('No scroll target');
+  });
+});
+
+//===// Clock time //===//
+clock.addEventListener('mouseover', () => {
+  const date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  clock.title = `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+});
+
+//===// Change hero images //===//
+window.onload = () => {
+  const date = new Date();
+  let today = `${date.getDate()}.${date.getMonth() + 1}`;
+
+  if (today === '24.12' || today === '25.12' || today === '26.12') {
+    logo.src = './img/hero_hat.png';
+    backpack.src = './img/props/backpack/red.png';
+  }
+
+  if (today === '31.12' || today === '1.1') {
+    logo.src = './img/hero_firework.png';
+    backpack.src = './img/props/backpack/rainbow.png';
+  }
+};
+
+//===// Content insert //===//
+
+//=// New items //=//
+contentInsertImg(newItems, '--items', 'newItems');
+
+//=// Changed craftings //=//
+contentInsertImg(craftings, '--craftings', 'craftings');
+
+//=// New structures //=//
+contentInsertImg(structures, '--structures', 'structures');
+
+//=// Tutorials //=//
+contentInsertTut(tutorials, '.tutorials__container');
 
 //=// Rules //=//
 contentInsertRules(rules, '.info__rules');

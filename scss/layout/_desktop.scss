@@ -76,6 +76,7 @@
 
     &__img {
       height: min(44rem, 40vw);
+      transform: translateX(15%) scale(1.15);
     }
 
     &__quote {
