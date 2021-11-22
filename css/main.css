@@ -77,14 +77,10 @@ img {
 
 @media screen and (prefers-color-scheme: dark) {
   :root {
-    --main: #e6a20c;
-    --light: #ecceaf;
-    --dark: #1d1a1b;
-    --accent: #d84102;
-  }
-
-  img {
-    opacity: 0.95;
+    --main: #f4b324;
+    --light: #f6e7d8;
+    --dark: #1c191a;
+    --accent: #f14902;
   }
 }
 :root {

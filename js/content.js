@@ -165,8 +165,9 @@ export const tutorials = [
   // SkinsRestorer 13
   [
     'SkinsRestorer',
-    'Osoby nie posiadające konta premium nie muszą czuć się pokrzywdzone, ponieważ jest możliwość ustawienia sobie jakiegokolwiek skina, wpisując <i>/skin (link do skina)</i>.',
+    'Osoby nie posiadające konta premium nie muszą czuć się pokrzywdzone, ponieważ jest możliwość ustawienia sobie jakiegokolwiek skina.',
     [
+      '<b>! Uwaga</b>: Aby, ustawić skina użyj komendy <i>/skin (link do skina)</i>.',
       '<b>! Uwaga</b>: Zalecamy używać strony <a href="https://www.minecraftskins.com/" target="_blank" title="SKINDEX"><i class="fas fa-external-link-alt btn btn--icon btn--icon--rounded btn--link tutorials__link"></i></a>.'
     ],
   ],

@@ -131,7 +131,7 @@ const contentInsertTut = (array, container) => {
 
     const desc = document.createElement('p');
     desc.classList.add('tutorials__element-desc');
-    desc.innerHTML = item[1];
+    desc.innerText = item[1];
     box.append(desc);
 
     if (item[2]) {
