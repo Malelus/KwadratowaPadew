@@ -26,4 +26,8 @@ $color: (
     --dark: #{lighten(#1c191a, 0.5%)};
     --accent: #{darken(#f14902, 5%)};
   }
+
+  img {
+    filter: invert(2.5%);
+  }
 }

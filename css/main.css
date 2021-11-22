@@ -82,6 +82,10 @@ img {
     --dark: #1d1a1b;
     --accent: #d84102;
   }
+
+  img {
+    filter: invert(2.5%);
+  }
 }
 :root {
   --transition-static: 1s;
