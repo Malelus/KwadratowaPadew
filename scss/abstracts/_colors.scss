@@ -3,27 +3,11 @@
 //==================//
 
 $color: (
-  'bg-main': var(--main),
-  'bg-light': var(--light),
-  'bg-dark': var(--dark),
-  'txt-main': var(--main),
-  'txt-light': var(--light),
-  'txt-dark': var(--dark),
-  'accent': var(--accent),
+  'bg-main': #f4b324,
+  'bg-light': #f6e7d8,
+  'bg-dark': #1c191a,
+  'txt-main': #f4b324,
+  'txt-light': #f6e7d8,
+  'txt-dark': #1c191a,
+  'accent': #f14902,
 );
-
-:root {
-  --main: #f4b324;
-  --light: #f6e7d8;
-  --dark: #1c191a;
-  --accent: #f14902;
-}
-
-@media screen and (prefers-color-scheme: dark) {
-  :root {
-    --main: #f4b324;
-    --light: #f6e7d8;
-    --dark: #1c191a;
-    --accent: #f14902;
-  }
-}
