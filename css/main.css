@@ -58,6 +58,10 @@ ul {
   list-style: none;
 }
 
+code {
+  line-height: 1.25em;
+}
+
 img {
   max-width: 100%;
   display: block;

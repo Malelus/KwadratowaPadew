@@ -155,7 +155,10 @@ export const tutorials = [
   // MarriageMaster 11
   [
     'Marriage Master',
-    'Możesz wziąść ślub, jeżeli będzie taka chęć prosimy o kontakt z księdzem używając komendy (...) lub poprzez czat.'
+    'Możesz wziąść ślub, jeżeli będzie taka chęć prosimy o kontakt z księdzem.',
+    [
+      '<b>! Uwaga</b>: Kontakt możliwy poprzez czat lub pod komendą <i>/...</i>.'
+    ]
   ],
   // PlayTime 12
   [
