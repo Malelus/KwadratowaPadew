@@ -97,7 +97,7 @@ export const tutorials = [
   // Wrench 2
   [
     'Klucz',
-    'Klucz, dzięki niemu możesz obrócić np. tłok lub lej bez uwcześniejszego niszczenia i ponownego kładzenia.',
+    'Klucz, dzięki niemu możesz obrócić, np. tłok lub lej bez wcześniejszego niszczenia i ponownego kładzenia.',
     [
       '<b>! Uwaga</b>: Bloki mające ekiwpunek muszą być puste, aby je obrócić.'
     ],
@@ -105,9 +105,9 @@ export const tutorials = [
   // Graves 3
   [
     'Nagrobki',
-    'Gdy zginiesz, na czacie pojawi się lokalizacja wygenerowanego nagrobka, który tylko ty możesz otworzyć i zebrać swoje przedmioty. Jedyne co tracisz to punkty doświadczenia.',
+    'Gdy zginiesz, na czacie pojawi się lokalizacja wygenerowanego nagrobka, który tylko ty możesz otworzyć i zebrać swoje przedmioty. Jedyne, co tracisz to punkty doświadczenia.',
     [
-      '<b>! Uwaga</b>: Trzymając przycisk SHIFT otwierając nagrobek blokujesz przedmioty tak że tylko ty możesz je podnieść.',
+      '<b>! Uwaga</b>: Trzymając przycisk SHIFT, otwierając nagrobek, blokujesz przedmioty tak, że tylko ty możesz je podnieść.',
       '<b>! Uwaga</b>: Jeżeli zgubisz wiadomość z lokalizacją nagrobka, możesz użyć komendy <i>/nagrobek</i> lub <i>/grave</i>.',
     ],
   ],
@@ -119,7 +119,7 @@ export const tutorials = [
   // Shield 5
   [
     'Tarcza',
-    'Prócz zmienionego craftingu podczas blokowania obrażeń dostajesz efekt głodu na krótki czas.',
+    'Prócz zmienionego craftingu, podczas blokowania obrażeń, dostajesz efekt głodu na krótki czas.',
     [
       '<b>! Uwaga</b>: Blokowanie strzał nie daje tego efektu.'
     ],
@@ -155,7 +155,7 @@ export const tutorials = [
   // MarriageMaster 11
   [
     'Marriage Master',
-    'Możesz wziąść ślub, jeżeli będzie taka chęć prosimy o kontakt z księdzem.',
+    'Możesz wziąć ślub, jeżeli będzie taka chęć prosimy o kontakt z księdzem.',
     [
       '<b>! Uwaga</b>: Kontakt możliwy poprzez czat lub pod komendą <i>/...</i>.'
     ]
@@ -163,12 +163,12 @@ export const tutorials = [
   // PlayTime 12
   [
     'PlayTime',
-    'Jeśli jesteś ciekawy jaki czas spędziłeś u nas na serwerze lub jesteś ciekawy jaka jest topka graczy z najdłuższym czasem gry.'
+    'Jeśli jesteś ciekawa/y, jaki czas spędziłaś/eś u nas na serwerze lub jesteś ciekawa/y, jaka jest topka graczy z najdłuższym czasem gry.'
   ],
   // SkinsRestorer 13
   [
     'SkinsRestorer',
-    'Osoby nie posiadające konta premium nie muszą czuć się pokrzywdzone, ponieważ jest możliwość ustawienia sobie jakiegokolwiek skina.',
+    'Osoby, nie posiadające konta premium, nie muszą czuć się pokrzywdzone, ponieważ jest możliwość ustawienia sobie jakiegokolwiek skina.',
     [
       '<b>! Uwaga</b>: Aby, ustawić skina użyj komendy <i>/skin (link do skina)</i>.',
       '<b>! Uwaga</b>: Zalecamy używać strony <a href="https://www.minecraftskins.com/" target="_blank" title="SKINDEX"><i class="fas fa-external-link-alt btn btn--icon btn--icon--rounded btn--link tutorials__link"></i></a>.'
@@ -179,13 +179,13 @@ export const tutorials = [
     'StackMob',
     'Aby duże skupiska mobów nie lagowały serwera, wprowadziliśmy system łączenia ich.',
     [
-      '<b>! Uwaga</b>: Wszystkie funkcjonalności są zachowane m.in. rozmnażanie zwierząt.'
+      '<b>! Uwaga</b>: Wszystkie funkcjonalności są zachowane, m.in. rozmnażanie zwierząt.'
     ],
   ],
   // XPKeeper 15
   [
     'XP Keeper',
-    'Jeżeli masz dużą ilość punktów doświadczenia możesz je odłożyć do tabliczki.',
+    'Jeżeli masz dużą ilość punktów doświadczenia, możesz je odłożyć do tabliczki.',
     [
       '<b>! Uwaga</b>: Pierwszy wiersz tabliczki: "[XP]"'
     ]
@@ -206,7 +206,7 @@ export const rules = [
   [
     'Zasady panujące na serwerze:',
     [
-      'Każda osoba która wchodzi na serwer ma obowiązek przeczytać zasady ogólne.',
+      'Każda osoba, która wchodzi na serwer ma obowiązek przeczytać zasady ogólne.',
       'Administracja nie przywraca utraconych przedmiotów w razie ich straty.',
       'Zakaz używania programów wspomagających, cheatów.',
       'Zakaz wykorzystywania bugów gry.',
@@ -220,7 +220,7 @@ export const rules = [
       'Obowiązkiem każdego jest przestrzeganie regulaminu.',
       'Każdy gracz wiedzący o istnieniu błędu gry ma obowiązek zgłosić to natychmiast do członka administracji w grze lub poprzez messenger serwera.',
       'Każdy gracz ma obowiązek wykonywać polecenia administracji.',
-      'Każdy kto widzi osobę łamiącą/nadużywającą regulamin ma obowiązek zgłoszenia administracji w trakcie gry.',
+      'Każdy, kto widzi osobę łamiącą/nadużywającą regulamin ma obowiązek zgłoszenia administracji w trakcie gry.',
     ],
   ],
 ];

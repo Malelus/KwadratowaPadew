@@ -426,6 +426,18 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       grid-template-rows: minmax(100px, auto);
       grid-auto-flow: dense;
+      grid-template-areas:
+        't3 t3'
+        't1 t1'
+        't2 t2'
+        't5 t5'
+        't8 t4'
+        't7 t15'
+        't6 t9'
+        't10 t11'
+        't12 t14'
+        't13 t13';
+
       gap: 1rem;
       margin: 3em 0 8em;
 
@@ -434,43 +446,63 @@
 
         // Backpacks 1
         &:nth-child(1) {
-          grid-row: span 1 / 2;
-          grid-column: span 2;
+          grid-area: t1;
         }
         // Wrench 2
         &:nth-child(2) {
-          grid-row: span 1;
-          grid-column: span 2;
+          grid-area: t2;
         }
         // Graves 3
         &:nth-child(3) {
-          grid-row: span 1 / 1;
-          grid-column: span 2;
+          grid-area: t3;
+        }
+        // Heads 4
+        &:nth-child(4) {
+          grid-area: t4;
         }
         // Shield 5
         &:nth-child(5) {
-          grid-row: span 1 / 4;
-          grid-column: span 2;
+          grid-area: t5;
+        }
+        // Brevery 6
+        &:nth-child(6) {
+          grid-area: t6;
         }
         // DiscordSRV 7
         &:nth-child(7) {
-          grid-row: span 1 / 6;
-          grid-column: span 1;
+          grid-area: t7;
         }
         // Essentials 8
         &:nth-child(8) {
-          grid-row: span 1 / 5;
-          grid-column: span 1;
+          grid-area: t8;
+        }
+        // ImageOnMap 9
+        &:nth-child(9) {
+          grid-area: t9;
+        }
+        // LogBlock 10
+        &:nth-child(10) {
+          grid-area: t10;
+        }
+        // MarriageMaster 11
+        &:nth-child(11) {
+          grid-area: t11;
+        }
+        // PlayTime 12
+        &:nth-child(12) {
+          grid-area: t12;
         }
         // SkinsRestorer 13
         &:nth-child(13) {
-          grid-row: span 1;
-          grid-column: span 2;
+          grid-area: t13;
+        }
+        // StackMob 14
+        &:nth-child(14) {
+          grid-area: t14;
         }
         // XPKeeper 15
         &:nth-child(15) {
-          grid-row: span 1 / 6;
-          grid-column: span 1;
+          grid-area: t15;
         }
       }
     }
