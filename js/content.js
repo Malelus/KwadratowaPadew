@@ -97,7 +97,7 @@ export const tutorials = [
   // Wrench 2
   [
     'Klucz',
-    'Klucz, dzięki niemu możesz obrócić, np. tłok lub lej bez wcześniejszego niszczenia i ponownego kładzenia.',
+    'Klucz, dzięki niemu możesz obrócić, np. tłok lub lej bez wcześniejszego niszczenia i ponownego postawienia.',
     [
       '<b>! Uwaga</b>: Bloki mające ekiwpunek muszą być puste, aby je obrócić.'
     ],
