@@ -44,10 +44,10 @@ const varGlobal = getComputedStyle(document.body);
 //====================//
 
 // - hamburger
-const scrollBrakeHamburger = 0.02;
+const scrollBrakeHamburger = 0.006;
 
 // - scrollUp
-const scrollBrakeScrollUp = 0.1;
+const scrollBrakeScrollUp = 0.015;
 
 // - content arrays
 import { newItems, craftings, structures, tutorials, rules } from './content.js';
