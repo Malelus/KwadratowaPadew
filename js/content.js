@@ -124,57 +124,78 @@ export const tutorials = [
       '<b>! Uwaga</b>: Blokowanie strzał nie daje tego efektu.'
     ],
   ],
-  // Brevery 6
+  // Iron farm 6
   [
-    'Brevery',
-    'Ciekawy plugin, który daje możliwosć produkcji własnego alkoholu.'
+    'Farma żelaza',
+    'Zmniejszyliśmy ilość wypadanego żelaza z golema.',
+    [
+      '<b>! Uwaga</b>: W momencie, gdy gracz zabije golema, wypada z niego domyślna ilość żelaza.'
+    ],
   ],
-  // DiscordSRV 7
+  // Brewery 7
   [
-    'DiscordSRV',
+    'Brewery',
+    'Ciekawy plugin, który daje możliwosć produkcji własnego alkoholu.',
+    [
+      '<b>! Uwaga</b>: Możesz sprawdzić swój stan upojenia, używając komendy: <i>/stan</i> lub <i>/condition</i>, usunąć etykietę alkoholu: <i>usun_etykiete</i> lub <i>remove_label</i>.'
+    ]
+  ],
+  // EssentialsDiscord 8
+  [
+    'EssentialsDiscord',
     'Dodaliśmy możliwość komunikacji między serwerem a discordem.',
     [
       '<b>! Tekstowy</b>: ⛏ kpadew ⛏'
     ]
   ],
-  // Essentials 8
+  // Essentials 9
   [
     'Essentials',
-    'M.in. prywatne wiadomości na serwerze.'
+    'M.in. prywatne wiadomości na serwerze.',
+    [
+      '<b>! Uwaga</b>: Teleportowanie zostało wyłączone.'
+    ]
   ],
-  // ImageOnMap 9
+  // Chairs 10
   [
-    'ImageOnMap',
-    'Mały plugin dający możliwość umieszczenia grafik z internetu na serwerze.'
+    'Krzesła',
+    'Dodaliśmy możliwość tworzenia krzeseł.',
+    [
+      '<b>! Uwaga</b>: Aby utworzyć krzesło, połóż schodek z tabliczkami na krawędziach lub z schodkami narożnymi. Długość dowolna.'
+    ]
   ],
-  // LogBlock 10
+  // LogBlock 11
   [
     'LogBlock',
     'Pomocny plugin na sprawdzenie historii akcji danego bloku, w tym wkładanie i wyciąganie przedmiotów ze skrzynek.'
   ],
-  // MarriageMaster 11
+  // MarriageMaster 12
   [
     'Marriage Master',
     'Możesz wziąć ślub, jeżeli będzie taka chęć prosimy o kontakt z księdzem.',
     [
-      '<b>! Uwaga</b>: Kontakt możliwy poprzez czat lub pod komendą <i>/...</i>.'
+      '<b>! Uwaga</b>: Kontakt możliwy poprzez czat.',
+      '<b>! Uwaga</b>: Możesz sprawdzić dostępnych księży pod komendą <i>/ksiadz</i> lub <i>/priest</i>.'
     ]
   ],
-  // PlayTime 12
+  // PlayTime 13
   [
     'PlayTime',
-    'Jeśli jesteś ciekawa/y, jaki czas spędziłaś/eś u nas na serwerze lub jesteś ciekawa/y, jaka jest topka graczy z najdłuższym czasem gry.'
+    'Jeśli jesteś ciekawa/y, jaki czas spędziłaś/eś u nas na serwerze lub jesteś ciekawa/y, jaka jest topka graczy z najdłuższym czasem gry.',
+    [
+      '<b>! Uwaga</b>: Aby, sprawdzić swój czas możesz użyć komendy: <i>/time</i> lub <i>/czas</i>, oraz sprawdzić topkę graczy pod komendą <i>/top</i>.'
+    ]
   ],
-  // SkinsRestorer 13
+  // SkinsRestorer 14
   [
     'SkinsRestorer',
     'Osoby, nie posiadające konta premium, nie muszą czuć się pokrzywdzone, ponieważ jest możliwość ustawienia sobie jakiegokolwiek skina.',
     [
-      '<b>! Uwaga</b>: Aby, ustawić skina użyj komendy <i>/skin (link do skina)</i>.',
+      '<b>! Uwaga</b>: Aby, ustawić skina użyj komendy <i>/skin (link do grafiki skina)</i>.',
       '<b>! Uwaga</b>: Zalecamy używać strony <a href="https://www.minecraftskins.com/" target="_blank" title="SKINDEX"><i class="fas fa-external-link-alt btn btn--icon btn--icon--rounded btn--link tutorials__link"></i></a>.'
     ],
   ],
-  // StackMob 14
+  // StackMob 15
   [
     'StackMob',
     'Aby duże skupiska mobów nie lagowały serwera, wprowadziliśmy system łączenia ich.',
@@ -182,12 +203,14 @@ export const tutorials = [
       '<b>! Uwaga</b>: Wszystkie funkcjonalności są zachowane, m.in. rozmnażanie zwierząt.'
     ],
   ],
-  // XPKeeper 15
+  // XPKeeper 16
   [
     'XP Keeper',
     'Jeżeli masz dużą ilość punktów doświadczenia, możesz je odłożyć do tabliczki.',
     [
-      '<b>! Uwaga</b>: Pierwszy wiersz tabliczki: "[XP]"'
+      '<b>! Uwaga</b>: Pierwszy wiersz tabliczki: "[XP]".',
+      '<b>! Uwaga</b>: Możesz podarować punkty doświadczenia używając komendy: <i>/podaruj_xp OSOBA ILOŚĆ</i>.',
+      '<b>! Uwaga</b>: Aby, usunąć tabliczkę użyj komendy: <i>/usun</i> lub <i>/remove</i>.'
     ]
   ],
 ];

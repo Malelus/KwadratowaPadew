@@ -336,6 +336,11 @@
       font-size: 1.35rem;
       line-height: 1.25em;
       margin: 3em 0.9em 1.25em;
+
+      &--ps {
+        font-size: 0.775em;
+        margin: 0 0 -1.25em;
+      }
     }
 
     &__link {
@@ -431,12 +436,13 @@
         't1 t1'
         't2 t2'
         't5 t5'
-        't8 t4'
-        't7 t15'
-        't6 t9'
-        't10 t11'
-        't12 t14'
-        't13 t13';
+        't9 t4'
+        't8 t6'
+        't16 t16'
+        't7 t13'
+        't11 t10'
+        't12 t15'
+        't14 t14';
 
       gap: 1rem;
       margin: 3em 0 8em;
@@ -464,45 +470,49 @@
         &:nth-child(5) {
           grid-area: t5;
         }
-        // Brevery 6
+        // IronFarm 6
         &:nth-child(6) {
           grid-area: t6;
         }
-        // DiscordSRV 7
+        // Brevery 7
         &:nth-child(7) {
           grid-area: t7;
         }
-        // Essentials 8
+        // DiscordSRV 8
         &:nth-child(8) {
           grid-area: t8;
         }
-        // ImageOnMap 9
+        // Essentials 9
         &:nth-child(9) {
           grid-area: t9;
         }
-        // LogBlock 10
+        // Chairs 10
         &:nth-child(10) {
           grid-area: t10;
         }
-        // MarriageMaster 11
+        // LogBlock 11
         &:nth-child(11) {
           grid-area: t11;
         }
-        // PlayTime 12
+        // MarriageMaster 12
         &:nth-child(12) {
           grid-area: t12;
         }
-        // SkinsRestorer 13
+        // PlayTime 13
         &:nth-child(13) {
           grid-area: t13;
         }
-        // StackMob 14
+        // SkinsRestorer 14
         &:nth-child(14) {
           grid-area: t14;
         }
-        // XPKeeper 15
+        // StackMob 15
         &:nth-child(15) {
           grid-area: t15;
+        }
+        // XPKeeper 16
+        &:nth-child(16) {
+          grid-area: t16;
         }
       }
     }

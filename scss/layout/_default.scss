@@ -404,6 +404,11 @@ body {
     font-size: 1.25rem;
     line-height: 1.25em;
     margin: 1.25em 0 0.75em;
+
+    &--ps {
+      font-size: 0.65em;
+      margin: 0 0 -1em;
+    }
   }
 
   &__link {
