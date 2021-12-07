@@ -878,6 +878,9 @@ body {
   font-size: 2.4rem;
   transition: transform 0.2s ease-out;
 }
+.contact__type:last-of-type {
+  margin-left: 0.5em;
+}
 .contact__type:hover {
   transform: scale(1.15) rotate(-5deg);
 }
@@ -1503,7 +1506,7 @@ body {
   }
 
   .tutorials__container {
-    grid-template-areas: "t2 t2 t4" "t3 t3 t3" "t11 t5 t5" "t1 t1 t1" "t12 t6 t8" "t14 t14 t14" "t10 t13 t7" "t16 t16 t16" "t9 t15 t15";
+    grid-template-areas: "t2 t2 t4" "t3 t3 t3" "t11 t5 t5" "t1 t1 t1" "t10 t6 t8" "t14 t14 t14" "t12 t13 t7" "t16 t16 t16" "t9 t15 t15";
   }
   .tutorials__container__element-desc {
     font-size: 1.25rem;

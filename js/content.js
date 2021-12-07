@@ -167,7 +167,10 @@ export const tutorials = [
   // LogBlock 11
   [
     'LogBlock',
-    'Pomocny plugin na sprawdzenie historii akcji danego bloku, w tym wkładanie i wyciąganie przedmiotów ze skrzynek.'
+    'Pomocny plugin na sprawdzenie historii akcji danego bloku, w tym wkładanie i wyciąganie przedmiotów ze skrzynek.',
+    [
+      '<b>! Uwaga</b>: Narzędzie otrzymasz, używając komendy: <i>/logblock</i>.'
+    ]
   ],
   // MarriageMaster 12
   [
