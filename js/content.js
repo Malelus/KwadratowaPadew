@@ -72,18 +72,6 @@ export const craftings = [
   ],
 ];
 
-// - structures
-export const structures = [
-  [
-    'Placeholder',
-    'placeholder.png'
-  ],
-  [
-    'Placeholder',
-    'placeholder.png'
-  ],
-];
-
 // - tutorials with description
 export const tutorials = [
   // Backpacks 1
@@ -137,7 +125,7 @@ export const tutorials = [
     'Brewery',
     'Ciekawy plugin, który daje możliwosć produkcji własnego alkoholu.',
     [
-      '<b>! Uwaga</b>: Możesz sprawdzić swój stan upojenia, używając komendy: <i>/stan</i> lub <i>/condition</i>, usunąć etykietę alkoholu: <i>usun_etykiete</i> lub <i>remove_label</i>.'
+      '<b>! Uwaga</b>: Możesz sprawdzić swój stan upojenia, używając komendy: <i>/stan</i> lub <i>/condition</i>, usunąć etykietę alkoholu: <i>/usun_etykiete</i> lub <i></i>/remove_label</i>.'
     ]
   ],
   // EssentialsDiscord 8
@@ -212,7 +200,7 @@ export const tutorials = [
     'Jeżeli masz dużą ilość punktów doświadczenia, możesz je odłożyć do tabliczki.',
     [
       '<b>! Uwaga</b>: Pierwszy wiersz tabliczki: "[XP]".',
-      '<b>! Uwaga</b>: Możesz podarować punkty doświadczenia używając komendy: <i>/podaruj_xp OSOBA ILOŚĆ</i>.',
+      '<b>! Uwaga</b>: Możesz podarować punkty doświadczenia używając komendy: <i>/podaruj_xp <OSOBA> <ILOŚĆ></i>.',
       '<b>! Uwaga</b>: Aby, usunąć tabliczkę użyj komendy: <i>/usun</i> lub <i>/remove</i>.'
     ]
   ],
@@ -237,14 +225,15 @@ export const rules = [
       'Zakaz używania programów wspomagających, cheatów.',
       'Zakaz wykorzystywania bugów gry.',
       'Handel z graczami odbywa się na własne ryzyko.',
-      'Każdy jest równy sobie. ',
+      'Konflikty między graczami są rozsztrzygane przez sąd serwerowy.',
+      'Każdy jest równy sobie.',
     ],
   ],
   [
     'Obowiązki:',
     [
       'Obowiązkiem każdego jest przestrzeganie regulaminu.',
-      'Każdy gracz wiedzący o istnieniu błędu gry ma obowiązek zgłosić to natychmiast do członka administracji w grze lub poprzez messenger serwera.',
+      'Każdy gracz wiedzący o istnieniu błędu gry ma obowiązek zgłosić to natychmiast do członka administracji poprzez messenger serwera lub discord serwera.',
       'Każdy gracz ma obowiązek wykonywać polecenia administracji.',
       'Każdy, kto widzi osobę łamiącą/nadużywającą regulamin ma obowiązek zgłoszenia administracji w trakcie gry.',
     ],

@@ -1506,7 +1506,7 @@ body {
   }
 
   .tutorials__container {
-    grid-template-areas: "t2 t2 t4" "t3 t3 t3" "t11 t5 t5" "t1 t1 t1" "t10 t6 t8" "t14 t14 t14" "t12 t13 t7" "t16 t16 t16" "t9 t15 t15";
+    grid-template-areas: "t2 t2 t4" "t3 t3 t3" "t8 t5 t5" "t1 t1 t1" "t10 t6 t11" "t14 t14 t14" "t12 t13 t7" "t16 t16 t16" "t9 t15 t15";
   }
   .tutorials__container__element-desc {
     font-size: 1.25rem;

@@ -50,7 +50,7 @@ const scrollBrakeHamburger = 0.006;
 const scrollBrakeScrollUp = 0.015;
 
 // - content arrays
-import { newItems, craftings, structures, tutorials, rules } from './content.js';
+import { newItems, craftings, tutorials, rules } from './content.js';
 
 // - DOM variables
 let varArray = ['--transition-static'];
@@ -307,11 +307,15 @@ contentInsertImg(newItems, '--items', 'newItems');
 //=// Changed craftings //=//
 contentInsertImg(craftings, '--craftings', 'craftings');
 
-//=// New structures //=//
-contentInsertImg(structures, '--structures', 'structures');
-
 //=// Tutorials //=//
 contentInsertTut(tutorials, '.tutorials__container');
 
 //=// Rules //=//
 contentInsertRules(rules, '.info__rules');
+
+//===// Additonal //===//
+
+document.getElementById('noDownload').addEventListener('click', (e) => {
+  e.preventDefault();
+  alert('Wkrótce!');
+});
