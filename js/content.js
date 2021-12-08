@@ -183,7 +183,8 @@ export const tutorials = [
     'Osoby, nie posiadające konta premium, nie muszą czuć się pokrzywdzone, ponieważ jest możliwość ustawienia sobie jakiegokolwiek skina.',
     [
       '<b>! Uwaga</b>: Aby, ustawić skina użyj komendy <i>/skin (link do grafiki skina)</i>.',
-      '<b>! Uwaga</b>: Zalecamy używać strony <a href="https://www.minecraftskins.com/" target="_blank" title="SKINDEX"><i class="fas fa-external-link-alt btn btn--icon btn--icon--rounded btn--link tutorials__link"></i></a>.'
+      '<b>! Uwaga</b>: Zalecamy używać strony <a href="https://www.minecraftskins.com/" target="_blank" title="SKINDEX"><i class="fas fa-external-link-alt btn btn--icon btn--icon--rounded btn--link tutorials__link"></i></a>.',
+      '<b>! Uwaga</b>: Aby, zresetować skina użyj komendy <i>/skin clear</i>.'
     ],
   ],
   // StackMob 15
