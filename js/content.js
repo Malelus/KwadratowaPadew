@@ -174,7 +174,7 @@ export const tutorials = [
     'PlayTime',
     'Jeśli jesteś ciekawa/y, jaki czas spędziłaś/eś u nas na serwerze lub jesteś ciekawa/y, jaka jest topka graczy z najdłuższym czasem gry.',
     [
-      '<b>! Uwaga</b>: Aby, sprawdzić swój czas możesz użyć komendy: <i>/time</i> lub <i>/czas</i>, oraz sprawdzić topkę graczy pod komendą <i>/top</i>.'
+      '<b>! Uwaga</b>: Aby sprawdzić swój czas możesz użyć komendy: <i>/time</i> lub <i>/czas</i>, oraz sprawdzić topkę graczy pod komendą <i>/top</i>.'
     ]
   ],
   // SkinsRestorer 14
@@ -182,9 +182,9 @@ export const tutorials = [
     'SkinsRestorer',
     'Osoby, nie posiadające konta premium, nie muszą czuć się pokrzywdzone, ponieważ jest możliwość ustawienia sobie jakiegokolwiek skina.',
     [
-      '<b>! Uwaga</b>: Aby, ustawić skina użyj komendy <i>/skin (link do grafiki skina)</i>.',
+      '<b>! Uwaga</b>: Aby ustawić skina użyj komendy <i>/skin (link do grafiki skina)</i>.',
       '<b>! Uwaga</b>: Zalecamy używać strony <a href="https://www.minecraftskins.com/" target="_blank" title="SKINDEX"><i class="fas fa-external-link-alt btn btn--icon btn--icon--rounded btn--link tutorials__link"></i></a>.',
-      '<b>! Uwaga</b>: Aby, zresetować skina użyj komendy <i>/skin clear</i>.'
+      '<b>! Uwaga</b>: Aby zresetować skina użyj komendy <i>/skin clear</i>.'
     ],
   ],
   // StackMob 15
@@ -202,7 +202,7 @@ export const tutorials = [
     [
       '<b>! Uwaga</b>: Pierwszy wiersz tabliczki: "[XP]".',
       '<b>! Uwaga</b>: Możesz podarować punkty doświadczenia używając komendy: <i>/podaruj_xp [GRACZ] [ILOŚĆ]</i> lub <i>/gift_xp [GRACZ] [ILOŚĆ]</i>.',
-      '<b>! Uwaga</b>: Aby, usunąć tabliczkę użyj komendy: <i>/usun</i> lub <i>/remove</i>.'
+      '<b>! Uwaga</b>: Aby usunąć tabliczkę użyj komendy: <i>/usun</i> lub <i>/remove</i>.'
     ]
   ],
 ];
