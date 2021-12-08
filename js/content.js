@@ -200,7 +200,7 @@ export const tutorials = [
     'Jeżeli masz dużą ilość punktów doświadczenia, możesz je odłożyć do tabliczki.',
     [
       '<b>! Uwaga</b>: Pierwszy wiersz tabliczki: "[XP]".',
-      '<b>! Uwaga</b>: Możesz podarować punkty doświadczenia używając komendy: <i>/podaruj_xp <OSOBA> <ILOŚĆ></i>.',
+      '<b>! Uwaga</b>: Możesz podarować punkty doświadczenia używając komendy: <i>/podaruj_xp [GRACZ] [ILOŚĆ]</i> lub <i>/gift_xp [GRACZ] [ILOŚĆ]</i>.',
       '<b>! Uwaga</b>: Aby, usunąć tabliczkę użyj komendy: <i>/usun</i> lub <i>/remove</i>.'
     ]
   ],
