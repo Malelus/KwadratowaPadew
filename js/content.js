@@ -93,9 +93,10 @@ export const tutorials = [
   // Graves 3
   [
     'Nagrobki',
-    'Gdy zginiesz, na czacie pojawi się lokalizacja wygenerowanego nagrobka, który tylko ty możesz otworzyć i zebrać swoje przedmioty. Jedyne, co tracisz to punkty doświadczenia.',
+    'Gdy zginiesz, na czacie pojawi się lokalizacja wygenerowanego nagrobka, który tylko Ty możesz otworzyć i zebrać swoje przedmioty. Jedyne, co tracisz to punkty doświadczenia.',
     [
-      '<b>! Uwaga</b>: Trzymając przycisk SHIFT, otwierając nagrobek, blokujesz przedmioty tak, że tylko ty możesz je podnieść.',
+      '<b>! Uwaga</b>: Czas, po jakim nagrobek znika, wynosi 5 minut (Chunk z nagrobkiem musi być załadowany!).',
+      '<b>! Uwaga</b>: Trzymając przycisk SHIFT, otwierając nagrobek, blokujesz przedmioty tak, że tylko Ty możesz je podnieść.',
       '<b>! Uwaga</b>: Jeżeli zgubisz wiadomość z lokalizacją nagrobka, możesz użyć komendy <i>/nagrobek</i> lub <i>/grave</i>.',
     ],
   ],
