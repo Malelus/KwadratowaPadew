@@ -184,8 +184,6 @@ const contentInsertRules = (array, container) => {
 window.addEventListener('load', () => {
   if (img.complete && img.naturalHeight !== 0) {
     setTimeout(() => {
-      scrolling();
-
       transitionElement.classList.remove('transition--active');
     }, varArray[0]);
   }
@@ -312,10 +310,3 @@ contentInsertTut(tutorials, '.tutorials__container');
 
 //=// Rules //=//
 contentInsertRules(rules, '.info__rules');
-
-//===// Additonal //===//
-
-document.getElementById('noDownload').addEventListener('click', (e) => {
-  e.preventDefault();
-  alert('Wkrótce!');
-});
