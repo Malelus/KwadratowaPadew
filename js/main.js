@@ -266,7 +266,7 @@ scrollTo.forEach((item) => {
   item.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const targetSection = document.getElementById(item.getAttribute('href'));
+    const targetSection = document.getElementById(item.dataset.target);
 
     targetSection != null ? (targetSection.scrollIntoView({ behavior: 'smooth' }), navClose()) : alert('No scroll target');
   });
