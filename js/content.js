@@ -216,7 +216,7 @@ export const rules = [
       'Wraz z dołączeniem na serwer, akceptujesz regulamin.',
       'Karą za łamanie, uchylanie się od regulaminu - ban lub wyrzucenie z serwera.',
       'Administracja ma prawo karać za czyny nie uwzględnione w regulaminie, które działają na szkodę serwera.',
-      'Nieznajomość regulaminu nie zwalnia z jego przestrzegania.',
+      'Nieznajomość regulaminu nie zwalnia z jego przestrzegania.'
     ],
   ],
   [
@@ -227,7 +227,8 @@ export const rules = [
       'Zakaz używania programów wspomagających, cheatów.',
       'Zakaz wykorzystywania bugów gry.',
       'Handel z graczami odbywa się na własne ryzyko.',
-      'Każdy jest równy sobie.',
+      'Konflikty między graczami są rozsztrzygane przez sąd serwerowy, po uwcześniejszym zgłoszeniu do Asystenta.',
+      'Każdy jest równy sobie.'
     ],
   ],
   [
@@ -236,7 +237,7 @@ export const rules = [
       'Obowiązkiem każdego jest przestrzeganie regulaminu.',
       'Każdy gracz wiedzący o istnieniu błędu gry ma obowiązek zgłosić to natychmiast do członka administracji poprzez messenger serwera lub discord serwera.',
       'Każdy gracz ma obowiązek wykonywać polecenia administracji.',
-      'Każdy, kto widzi osobę łamiącą/nadużywającą regulamin ma obowiązek zgłoszenia administracji w trakcie gry.',
+      'Każdy, kto widzi osobę łamiącą/nadużywającą regulamin ma obowiązek zgłoszenia administracji w trakcie gry.'
     ],
   ],
 ];
