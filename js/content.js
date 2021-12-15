@@ -227,7 +227,7 @@ export const rules = [
       'Zakaz używania programów wspomagających, cheatów.',
       'Zakaz wykorzystywania bugów gry.',
       'Handel z graczami odbywa się na własne ryzyko.',
-      'Konflikty między graczami są rozsztrzygane przez sąd serwerowy, po uwcześniejszym zgłoszeniu do Asystenta.',
+      'Konflikty między graczami są rozsztrzygane przez sąd serwerowy, po uwcześniejszym zgłoszeniu do asystenta.',
       'Każdy jest równy sobie.'
     ],
   ],
