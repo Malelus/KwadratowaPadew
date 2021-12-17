@@ -27,7 +27,6 @@
 
     &--rounded {
       border-radius: 50%;
-      background: color(bg-main);
     }
   }
 
@@ -47,6 +46,15 @@
     color: color(txt-dark);
   }
 
+  //===// Popup //===//
+
+  &--popup {
+    display: inline-block;
+    background: color(accent);
+    color: color(txt-light);
+    text-align: center;
+  }
+
   //===// Contact //===//
 
   &--contact {
@@ -61,7 +69,6 @@
     position: fixed;
     z-index: 7;
     border-radius: 50%;
-    background: color(bg-main);
     font-size: 2rem;
     box-shadow: none;
     padding: 0.1em;

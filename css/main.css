@@ -230,7 +230,6 @@ img {
 }
 .btn--icon--rounded {
   border-radius: 50%;
-  background: #f4b324;
 }
 .btn--header {
   width: 100%;
@@ -242,6 +241,12 @@ img {
   background: #f6e7d8;
   color: #1c191a;
 }
+.btn--popup {
+  display: inline-block;
+  background: #f14902;
+  color: #f6e7d8;
+  text-align: center;
+}
 .btn--contact {
   display: inline-block;
   background: #1c191a;
@@ -251,7 +256,6 @@ img {
   position: fixed;
   z-index: 7;
   border-radius: 50%;
-  background: #f4b324;
   font-size: 2rem;
   box-shadow: none;
   padding: 0.1em;
@@ -270,8 +274,8 @@ section {
 }
 
 .scrollUp {
-  right: 31.5px;
-  bottom: 85px;
+  right: 20px;
+  bottom: 55px;
   opacity: 0;
   visibility: hidden;
 }
