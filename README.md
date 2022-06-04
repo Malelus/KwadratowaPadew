@@ -1,6 +1,6 @@
 # Strona serwera Minecraft Kwadratowa Padew.
 
-> ### [Link do strony](https://www.kpadew.eu)
+> ### [Link do strony](https://malelus.github.io/Project_KwadratowaPadew/)
 
 ---
 
